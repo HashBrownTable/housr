@@ -18,7 +18,18 @@ var UserSchema = new Schema({
   facebook: {},
   twitter: {},
   google: {},
-  github: {}
+  github: {},
+
+  // Preferences
+  priceRange: [],
+  ageRange: [],
+  preferedNumber: Number,
+  preferedLocation: String,
+
+  // Details
+  age: Number,
+  description: String,
+  picture: String,
 });
 
 /**
