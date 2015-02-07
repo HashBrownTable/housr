@@ -21,7 +21,15 @@ angular.module('housrApp')
 	    var preferedNumber = $scope.user.roomates;
 	    var preferedLocation = $scope.userpreferedLocation;
 
-	    var preferedGender = female;
+	    var preferedGender = both;
+
+	   //  if (!preferedGender = both){
+	   //  	if($scope.prefFemale){
+				// preferedGender = female;
+	   //  	}else{
+	   //  		preferedGender = male;
+	   //  	}
+	   //  };
 	 //    if($scope.prefFemale)
 	 //    preferedGender = female;
 		// else if ($scope.prefMale)
@@ -36,6 +44,7 @@ angular.module('housrApp')
 		console.log(ageRange);
 		console.log(preferedNumber);
 		console.log(preferedLocation);
+		console.log(preferedGender);
 
     };
 
