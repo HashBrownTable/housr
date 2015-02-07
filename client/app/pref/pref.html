@@ -2,19 +2,19 @@
 	<MD-INPUT-CONTAINER>
 Please indicate your preferences for your ideal roomate!
 
-	<div><label>Gender</label></div>
+	<div><label>Gender</label></div></br>
 
 	<div>
-	 		 <md-checkbox ng-model="data.cb2" aria-label="Female" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
-	    		Female: {{ data.cb1 }}
+	 		 <md-checkbox ng-model="user.prefFemale" aria-label="Female" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+	    		Female: {{ user.prefFemale }}
 	 		 </md-checkbox>
 
-	 		  <md-checkbox ng-model="data.cb2" aria-label="Male" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
-	    		Male: {{ data.cb2 }}
+	 		  <md-checkbox ng-model="user.prefMale" aria-label="Male" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+	    		Male: {{ user.prefMale }}
 	 		 </md-checkbox>
 
-	 		  <md-checkbox ng-model="data.cb2" aria-label="Doesn't Matter" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
-	    		Doesn't Matter: {{ data.cb3 }}
+	 		  <md-checkbox ng-model="user.prefNA" aria-label="Doesn't Matter" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+	    		Doesn't Matter: {{ user.prefNA }}
 	 		 </md-checkbox>
 
 	</div>
@@ -22,9 +22,6 @@ Please indicate your preferences for your ideal roomate!
 	<div ng-app="app" ng-controller="DemoCtrl" layout="column">
 	  <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
 	     
-	<div><label>Where would you like to live?</label></div>
-
-	  
 	    <form name="userForm">
 	      
 	      <div layout layout-sm="column">
@@ -38,6 +35,20 @@ Please indicate your preferences for your ideal roomate!
 	        </md-input-container>
 	      </div>
 
+     	<div layout layout-sm="column">
+	        <md-input-container flex>
+	          <label>Min Price</label>
+	          <input ng-model="user.minPrice" placeholder="ex. 0">
+	        </md-input-container>
+	        <md-input-container flex>
+	          <label>Max Price</label>
+	          <input ng-model="user.maxPrice" placeholder="ex. 5000">
+	        </md-input-container>
+	        <md-input-container flex>
+	          <label>Roomates looking for</label>
+	          <input ng-model="user.rommates" placeholder="ex. 5000">
+	        </md-input-container>
+	      </div>
 
 		<md-input-container flex>
 	        <label>Neighbourhood</label>
