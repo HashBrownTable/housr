@@ -28,6 +28,8 @@ body {
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
+@import 'account/logout/logout.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
+@import 'pref/pref.scss';
 // endinjector
