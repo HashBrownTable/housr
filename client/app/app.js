@@ -51,5 +51,6 @@ angular.module('housrApp', [
           $location.path('/login');
         }
       });
+      $rootScope.showNav = next.url !== '/login';
     });
   });
