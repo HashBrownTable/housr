@@ -1,24 +1,25 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1>Login</h1>
-    </div>
-    <div class="col-sm-12">
-      <form class="form" name="form" ng-submit="login(form)" novalidate>
+<div layout-fill>
+  <div layout="row" layout-align="center center">
+    <md-card class="form md-whiteframe-z3 demo-container" flex="100" flex-md="66" flex-gt-md="50">
+      <div class="login-hero">
 
-        <div class="form-group">
+      </div>
+      <md-card-content>
+      <form name="form" ng-submit="login(form)" novalidate>
+        <h2>Login</h2>
+        <md-input-container>
           <label>Email</label>
 
           <input type="email" name="email" class="form-control" ng-model="user.email" required>
-        </div>
+        </md-input-container>
 
-        <div class="form-group">
+        <md-input-container>
           <label>Password</label>
 
           <input type="password" name="password" class="form-control" ng-model="user.password" required>
-        </div>
+        </md-input-container>
 
         <div class="form-group has-error">
           <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && submitted">
@@ -32,16 +33,17 @@
         </div>
 
         <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">
+          <md-button class="md-primary" type="submit">
             Login
-          </button>
-          <a class="btn btn-default btn-lg btn-register" href="/signup">
+          </md-button>&nbsp;&nbsp;
+          <md-button href="/signup">
             Register
-          </a>
+          </md-button>
         </div>
-
-        <hr>
-        <div>
+        <br>
+        <md-divider></md-divider>
+        <br><br>
+        <div class="login-buttons">
           <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
             <i class="fa fa-facebook"></i> Connect with Facebook
           </a>
@@ -53,7 +55,7 @@
           </a>
         </div>
       </form>
-    </div>
+      </md-card-content>
+    </md-card>
   </div>
-  <hr>
 </div>
