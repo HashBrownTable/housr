@@ -11,6 +11,14 @@ angular.module('housrApp')
 
     $scope.user = {};
 
+    $scope.check = function(){
+
+      console.log("check called");
+       User.get(function(data) {
+            debugger;
+       });
+    }
+
     $scope.save = function(){
     	var toLog = "Hello world";
 
@@ -19,8 +27,8 @@ angular.module('housrApp')
 
 	    var priceRange = [$scope.user.minPrice,$scope.user.maxPrice];
 	    var ageRange = [$scope.user.agePref];
-	    var preferedNumber = $scope.user.roomates;
-	    var preferedLocation = $scope.userpreferedLocation;
+	    var preferedNumber = $scope.user.preferedNumber;
+	    var preferedLocation = $scope.user.preferedLocation;
 
 	    var preferedGender = "both";
 
@@ -54,6 +62,8 @@ angular.module('housrApp')
       // 	priceRange
       // }
 
+
+      $scope.user.preferedGender = preferedGender;
 
       User.savePrefs($scope.user);
 
