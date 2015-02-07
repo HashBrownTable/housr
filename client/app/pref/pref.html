@@ -41,36 +41,22 @@ Please indicate your preferences for your ideal roomate!
 	        </md-input-container>
 	        <md-input-container flex>
 	          <label>Roomates looking for</label>
-	          <input ng-model="user.rommates" placeholder="ex. 5000">
+	          <input ng-model="user.roomates" placeholder="ex. 5000">
+	        </md-input-container>
+	        <md-input-container flex>
+	          <label>Age Prefered</label>
+	          <input ng-model="user.agePref" placeholder="ex. 5000">
 	        </md-input-container>
 	      </div>
 
-		<md-input-container flex>
+			<md-input-container flex>
 	        <label>Neighbourhood</label>
-	        <input ng-model="user.neighourhood">
-	      </md-input-container>
-	      <md-input-container flex>
-	        <label>Address</label>
-	        <input ng-model="user.address">
-	      </md-input-container>
-	      <div layout layout-sm="column">
-	        <md-input-container flex>
-	          <label>City</label>
-	          <input ng-model="user.city">
-	        </md-input-container>
-	        <md-input-container flex>
-	          <label>State</label>
-	          <input ng-model="user.state">
-	        </md-input-container>
-	        <md-input-container flex>
-	          <label>Postal Code</label>
-	          <input ng-model="user.postalCode">
-	        </md-input-container>
-	      </div>
+	        <input ng-model="user.preferedLocation">
+	      </md-input-container>	       
 	      <md-input-container flex>
 	        <label>About your self</label>
 	        <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
 	      </md-input-container>
-    <section layout="row" layout-sm="column" layout-align="center center">
-      <span><md-button ng-click="save()">Submit</md-button></span>
+    `<section layout="row" layout-sm="column" layout-align="center center">
+      <span><md-button ng-click="alert()">Submit</md-button></span>
     </section>
