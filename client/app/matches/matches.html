@@ -14,17 +14,17 @@
                         <p>
                           {{item.notes}}
                         </p>
-                        
-                        <section layout="row" layout-sm="column" layout-align="center left">
-                            <md-button class="md-fab" aria-label="Trash">
-                                <md-icon icon="/assets/images/trash.jpg" style="width: 24px; height: 24px;"></md-icon>
-                            </md-button>
-                        </section>
-                        <section layout="row" layout-sm="column" layout-align="center right">
-                            <md-button class="pull-right md-fab" aria-label="Like">
-                                <md-icon icon="/assets/images/check.jpg" style="width: 24px; height: 24px;"></md-icon>
-                            </md-button>
-                        </section>
+
+                        <div class="match-button-wrapper">
+                          <md-button class="md-fab trash-button" aria-label="Trash">
+                              <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
+                          </md-button>
+
+                          <md-button class="pull-right md-fab" aria-label="Like">
+                              <md-icon icon="/assets/images/check.png" style="width: 24px; height: 24px;"></md-icon>
+                          </md-button>
+                        </div>
+
                     </md-card-content>
                 </md-card>
             </div>
@@ -49,7 +49,7 @@
             <h4>{{item.price_range}}</h4>
             <h4>{{item.gender_pref}}</h4>
             <h4>Prefered number of roomates: {{item.num_roommates}}</h4>
-            
+
             <p>
               {{item.notes}}
             </p>
