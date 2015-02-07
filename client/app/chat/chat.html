@@ -1,0 +1,22 @@
+<md-list flex class="scroll">
+  <md-item ng-repeat="item in messages">
+    <md-item-content>
+      <div class="md-tile-left">
+        <img ng-src="{{item.face}}" class="face" alt="{{item.who}}">
+      </div>
+      <div class="md-tile-content">
+        <h4>{{item.who}}</h4>
+        <p>
+          {{item.text}}
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+</md-list>
+<form ng-submit="send()" class="chat-bar" layout="row">
+  <md-input-container flex>
+    <label>Say Hello!</label>
+    <input ng-model="message" placeholder="Type a message">
+  </md-input-container>
+  <md-button ng-click="send()">Send</md-button>
+</form>
