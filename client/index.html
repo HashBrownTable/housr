@@ -31,7 +31,7 @@
     <md-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" md-component-id="left" ng-if="showNav" md-is-locked-open="$media('gt-sm')">
       <md-toolbar>
         <h2 class="md-toolbar-tools">
-          <span><a href="/">Housr</a></span>
+          <span>{{title}}</span>
         </h2>
       </md-toolbar>
       <md-list>
@@ -39,20 +39,6 @@
           <md-item-content>
             <md-button ng-href="/">
               Home
-            </md-button>
-          </md-item-content>
-        </md-item>
-        <md-item>
-          <md-item-content>
-            <md-button ng-href="/matches">
-              Matches
-            </md-button>
-          </md-item-content>
-        </md-item>
-        <md-item>
-          <md-item-content>
-            <md-button ng-href="/chat">
-              Chat
             </md-button>
           </md-item-content>
         </md-item>
@@ -76,11 +62,22 @@
     <div layout="column" flex class="content-wrapper" id="content">
       <md-toolbar md-scroll-shrink ng-if="showNav">
         <div class="md-toolbar-tools">
-          <h3>
-            <span>{{title}}</span>
-          </h3>
+          <div class="header-nav">
+            <md-button ng-href="/matches">
+              Matches
+            </md-button>
+            &nbsp;&nbsp;
+            <md-button ng-href="/chat">
+              Chat
+            </md-button>
+            &nbsp;&nbsp;
+            <md-button ng-href="/landlords">
+              Landlords
+            </md-button>
+        </div>
         </div>
       </md-toolbar>
+      <br>
       <md-content layout="column" flex class="md-padding">
           <div ui-view="" flex layout="column"></div>
       </md-content>
