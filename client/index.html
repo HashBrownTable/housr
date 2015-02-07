@@ -37,9 +37,36 @@
       <md-list>
         <md-item>
           <md-item-content>
-            <md-button>
-              <span class="avatar"></span>
-              Blah
+            <md-button ng-href="/">
+              Home
+            </md-button>
+          </md-item-content>
+        </md-item>
+        <md-item>
+          <md-item-content>
+            <md-button ng-href="/matches">
+              Matches
+            </md-button>
+          </md-item-content>
+        </md-item>
+        <md-item>
+          <md-item-content>
+            <md-button ng-href="/chat">
+              Chat
+            </md-button>
+          </md-item-content>
+        </md-item>
+        <md-item>
+          <md-item-content>
+            <md-button ng-href="/pref">
+              Preferences
+            </md-button>
+          </md-item-content>
+        </md-item>
+        <md-item>
+          <md-item-content>
+            <md-button ng-href="/logout">
+              Logout
             </md-button>
           </md-item-content>
         </md-item>
@@ -47,7 +74,7 @@
     </md-sidenav>
 
     <div layout="column" flex class="content-wrapper" id="content">
-      <md-toolbar md-scroll-shrink>
+      <md-toolbar md-scroll-shrink ng-if="showNav">
         <div class="md-toolbar-tools">
           <h3>
             <span>{{title}}</span>

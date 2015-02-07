@@ -1,1 +1,34 @@
+$fb-blue: #3b5998;
+$gplus-red: #d34836;
 
+.login-buttons{
+  .btn{
+    display: inline-block;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    text-decoration: none;
+    color: #fff;
+    i{
+      margin: 0 0.25em;
+    }
+  }
+  .btn-facebook{
+    background: $fb-blue;
+    &:hover{
+      background: #324870;
+    }
+  }
+
+  .btn-google-plus{
+    color: $gplus-red;
+    background: #eee;
+  }
+}
+
+.login-hero{
+  background: url('http://lorempixel.com/640/400/people/');
+  background-size: cover;
+  height: 20em;
+  width: 100%;
+  background-position: center;
+}
