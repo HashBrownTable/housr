@@ -6,7 +6,9 @@ angular.module('housrApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ngMaterial'
+  'ngAnimate',
+  'ngAria',
+  'ngMaterial',
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
     $urlRouterProvider
@@ -14,9 +16,11 @@ angular.module('housrApp', [
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
-    $mdThemingProvider.theme('default');
-  })
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue')
+      .accentPalette('pink');
 
+  })
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {
       // Add authorization token to headers

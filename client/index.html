@@ -30,9 +30,9 @@
 
     <md-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" md-component-id="left" ng-if="showNav" md-is-locked-open="$media('gt-sm')">
       <md-toolbar>
-        <h2 class="md-toolbar-tools">
+<!--         <h2 class="md-toolbar-tools">
           <span>{{title}}</span>
-        </h2>
+        </h2> -->
       </md-toolbar>
       <md-list>
         <md-item>
@@ -62,19 +62,25 @@
     <div layout="column" flex class="content-wrapper" id="content">
       <md-toolbar md-scroll-shrink ng-if="showNav">
         <div class="md-toolbar-tools">
+          <svg class="nav-hamburger" xmlns="http://www.w3.org/2000/svg" width="30px" height="50%" viewBox="0 0 48 48"><path color="white" d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"/></svg>
           <div class="header-nav">
             <md-button ng-href="/matches">
               Matches
             </md-button>
             &nbsp;&nbsp;
             <md-button ng-href="/chat">
-              Chat
+              Chats
             </md-button>
             &nbsp;&nbsp;
             <md-button ng-href="/landlords">
-              Landlords
+              Rentals
             </md-button>
         </div>
+
+        <div class="header-profile">
+          <img src="/assets/images/profile-placeholder.png">
+        </div>
+
         </div>
       </md-toolbar>
       <br>
