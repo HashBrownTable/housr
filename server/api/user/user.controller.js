@@ -22,6 +22,16 @@ exports.index = function(req, res) {
 };
 
 /**
+ * Get list of user matches
+ */
+exports.matches = function(req, res) {
+  User.find({}, '-salt -hashedPassword -email', function (err, users) {
+    if(err) return res.send(500, err);
+    res.json(200, users);
+  });
+};
+
+/**
  * Creates a new user
  */
 exports.create = function (req, res, next) {
@@ -35,6 +45,18 @@ exports.create = function (req, res, next) {
   });
 };
 
+/**
+ * Get a single user
+ */
+exports.show = function (req, res, next) {
+  var userId = req.params.id;
+
+  User.findById(userId, function (err, user) {
+    if (err) return next(err);
+    if (!user) return res.send(401);
+    res.json(user.profile);
+  });
+};
 /**
  * Get a single user
  */

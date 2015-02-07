@@ -24,6 +24,13 @@ angular.module('housrApp')
         params: {
           id:'me'
         }
+      },
+      matches: {
+        method: 'GET',
+        params: {
+          id:''
+        },
+        isArray: true
       }
 	  });
   });

@@ -1,31 +1,30 @@
 <md-list>
-    <md-item ng-repeat="item in todos">
+    <md-item ng-repeat="item in matches">
         <md-content>
             <div layout="row" layout-align="center">
                 <md-card>
-                    <img src="/assets/images/washedout.png" alt="Washed Out">
-                    <md-card-content >
-                        <h2>{{item.what}}</h2>
-                        <h4>Name: {{item.who}}</h4>
-                        <h4>Age: {{item.age}}</h4>
-                        <h4>Price Range: {{item.price_range}}</h4>
-                        <h4>Gender Preference: {{item.gender_pref}}</h4>
-                        <h4>Preferred number of roommates: {{item.num_roommates}}</h4>
-                        <p>
-                          {{item.notes}}
-                        </p>
-                        
-                        <section layout="row" layout-sm="column" layout-align="center left">
-                            <md-button class="md-fab" aria-label="Trash">
-                                <md-icon icon="/assets/images/trash.jpg" style="width: 24px; height: 24px;"></md-icon>
-                            </md-button>
-                        </section>
-                        <section layout="row" layout-sm="column" layout-align="center right">
-                            <md-button class="pull-right md-fab" aria-label="Like">
-                                <md-icon icon="/assets/images/check.jpg" style="width: 24px; height: 24px;"></md-icon>
-                            </md-button>
-                        </section>
-                    </md-card-content>
+                  <img ng-src="{{item.picture || 'http://lorempixel.com/500/240/abstract/'+item.name}}" alt="{{item.name}}">
+                  <md-card-content >
+                      <h4>Name: {{item.name}}</h4>
+                      <h4>Age: {{item.age}}</h4>
+                      <h4>Price Range: {{item.priceRange}}</h4>
+                      <h4>Gender Preference: {{item.preferedGender}}</h4>
+                      <h4>Preferred number of roommates: {{item.preferedNumber}}</h4>
+                      <p>
+                        {{item.notes}}
+                      </p>
+
+                      <section layout="row" layout-sm="column" layout-align="center left">
+                          <md-button class="md-fab" aria-label="Trash">
+                              <md-icon icon="/assets/images/trash.jpg" style="width: 24px; height: 24px;"></md-icon>
+                          </md-button>
+                      </section>
+                      <section layout="row" layout-sm="column" layout-align="center right">
+                          <md-button class="pull-right md-fab" aria-label="Like">
+                              <md-icon icon="/assets/images/check.jpg" style="width: 24px; height: 24px;"></md-icon>
+                          </md-button>
+                      </section>
+                  </md-card-content>
                 </md-card>
             </div>
         </md-content>
@@ -49,7 +48,7 @@
             <h4>{{item.price_range}}</h4>
             <h4>{{item.gender_pref}}</h4>
             <h4>Prefered number of roomates: {{item.num_roommates}}</h4>
-            
+
             <p>
               {{item.notes}}
             </p>
