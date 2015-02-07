@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('housrApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, $rootScope) {
+    $rootScope.title = 'Welcome';
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
@@ -20,6 +21,7 @@ angular.module('housrApp')
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
     };
+
 
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
