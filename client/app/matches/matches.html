@@ -5,15 +5,16 @@
                 <md-card>
                     <img src="/assets/images/washedout.png" alt="Washed Out">
                     <md-card-content >
-                        <h2>{{item.what}}</h2>
-                        <h4>Name: {{item.who}}</h4>
-                        <h4>Age: {{item.age}}</h4>
-                        <h4>Price Range: {{item.price_range}}</h4>
-                        <h4>Gender Preference: {{item.gender_pref}}</h4>
+<!--                         <h2>{{item.what}}</h2> -->
+                        <span class="match-name">{{item.who}}</span>
+<!--                         <h4>Age: {{item.age}}</h4> -->
+                        <span class="pull-right match-pricerange">Price Range: {{item.price_range}}</span>
+                        <br><br>
+<!--                         <h4>Gender Preference: {{item.gender_pref}}</h4>
                         <h4>Preferred number of roommates: {{item.num_roommates}}</h4>
                         <p>
                           {{item.notes}}
-                        </p>
+                        </p> -->
 
                         <div class="match-button-wrapper">
                           <md-button class="md-fab trash-button" aria-label="Trash">

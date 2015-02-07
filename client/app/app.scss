@@ -1,5 +1,5 @@
 $red: #e53b2c;
-$blue: #41b7d8;
+$blue: #2196f3;
 
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
@@ -75,6 +75,12 @@ body {
     margin-top: 0.7em;
     margin-left: 1em;
   }
+}
+
+.logo{
+  width: 4em;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
 }
 
 .nav-hamburger{
