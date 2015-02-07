@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('housrApp')
-  .controller('ChatCtrl', function ($scope, $rootScope, User) {
+  .controller('ChatCtrl', function ($scope, $rootScope, User, $stateParams) {
+    var chatId = $stateParams.id;
     $rootScope.title = 'Chat with Tristan Rice, Tristan Rice';
     User.get(function(data) {
       $scope.messages = [{

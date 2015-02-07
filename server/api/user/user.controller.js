@@ -87,6 +87,7 @@ exports.savePrefs = function(req, res, next) {
   var userId = req.user._id;
 
   User.findById(userId, function (err, user) {
+    console.log(req.body);
     _.each(req.body, function(v, k) {
       user[k] = v;
     });
