@@ -12,6 +12,12 @@ angular.module('housrApp')
           controller:'password'
         }
       },
+      savePrefs: {
+        method: 'POST',
+        params: {
+          controller: 'savePrefs',
+        }
+      },
       get: {
         method: 'GET',
         params: {
