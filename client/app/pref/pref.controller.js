@@ -2,20 +2,23 @@
 
 angular.module('housrApp')
   .controller('PrefCtrl', function ($scope, User) {
-    $scope.message = 'Hello';
+    //$scope.message = 'Hello';
 
 
     $scope.saveStub = function() {
     	alert('Placeholder');
     };
 
-    $scope.user = {};
+    $scope.user = User.get(function(data) {});
 
     $scope.check = function(){
 
       console.log("check called");
+
        User.get(function(data) {
-            debugger;
+            //debugger;
+            alert(data.user);
+            //document.write(data);
        });
     }
 

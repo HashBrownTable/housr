@@ -1,14 +1,15 @@
 <md-list>
-    <md-item ng-repeat="item in todos">
+    <md-item ng-repeat="item in matches">
         <md-content>
             <div layout="row" layout-align="center">
                 <md-card>
-                    <img src="/assets/images/washedout.png" alt="Washed Out">
+
+                    <img src="{{item.picture || 'http://lorempixel.com/500/240/abstract/'+item.name}}" alt="Washed Out">
                     <md-card-content >
 <!--                         <h2>{{item.what}}</h2> -->
-                        <span class="match-name">{{item.who}}</span>
+                        <span class="match-name">{{item.name}}</span>
 <!--                         <h4>Age: {{item.age}}</h4> -->
-                        <span class="pull-right match-pricerange">Price Range: {{item.price_range}}</span>
+                        <span class="pull-right match-pricerange">Price Range: {{item.priceRange}}</span>
                         <br><br>
 <!--                         <h4>Gender Preference: {{item.gender_pref}}</h4>
                         <h4>Preferred number of roommates: {{item.num_roommates}}</h4>
@@ -27,6 +28,7 @@
                         </div>
 
                     </md-card-content>
+
                 </md-card>
             </div>
         </md-content>

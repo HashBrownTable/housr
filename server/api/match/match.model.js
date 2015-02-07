@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var MatchSchema = new Schema({
-  people: Array,
+  people: [],
   messages: []
 });
 
