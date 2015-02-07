@@ -6,7 +6,9 @@ angular.module('housrApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ngMaterial'
+  'ngAnimate',
+  'ngAria',
+  'ngMaterial',
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
     $urlRouterProvider
