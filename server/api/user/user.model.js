@@ -25,6 +25,7 @@ var UserSchema = new Schema({
   ageRange: [],
   preferedNumber: Number,
   preferedLocation: String,
+  preferedGender: String,
 
   // Details
   age: Number,

@@ -53,6 +53,11 @@ angular.module('housrApp', [
           $location.path('/login');
         }
       });
-      $rootScope.showNav = next.url !== '/login';
+      console.log(next.url);
+      $rootScope.showNav = true;
+      if((next.url == '/login')||(next.url == '/signup')){
+        console.log('showNav');
+        $rootScope.showNav = false;
+      }
     });
   });
