@@ -9,8 +9,8 @@ angular.module('housrApp')
     	alert('Placeholder');
     };
 
-    $scope.alert = function(){
-    	//alert ("what is that?");
+    $scope.save = function(){
+    	alert ("what is that?");
     	var toLog = "Hello world";
 
     	var firstName = $scope.user.firstName;
@@ -21,14 +21,23 @@ angular.module('housrApp')
 	    var preferedNumber = $scope.user.roomates;
 	    var preferedLocation = $scope.userpreferedLocation;
 
-	    var preferedGender = female;
-	 //    if($scope.prefFemale)
-	 //    preferedGender = female;
-		// else if ($scope.prefMale)
-		// preferedGender = male;
-		// else{
-		// 	preferedGender = both;
-		// }
+	    var preferedGender = "";
+
+	    
+	    if($scope.user.prefFemale == true)
+	    {
+			preferedGender = "female";
+	    }
+	    	else if ($scope.user.prefMale == true){
+	    	preferedGender = "male";
+	    } 
+	    
+
+	    if ($scope.user.prefFemale == true && $scope.user.prefMale == true)
+	    {
+	    	preferedGender = "both";
+	    };
+
 
 		console.log(firstName);
 		console.log(lastName);
@@ -36,6 +45,7 @@ angular.module('housrApp')
 		console.log(ageRange);
 		console.log(preferedNumber);
 		console.log(preferedLocation);
+		console.log(preferedGender);
 
     };
 

@@ -2,19 +2,15 @@
 	<MD-INPUT-CONTAINER>
 Please indicate your preferences for your ideal roomate!
 
-	<div><label>Gender</label></div></br>
+	<div><label>Gender, not choosing will be considered "both"</label></div></br>
 
 	<div>
-	 		 <md-checkbox ng-model="user.prefFemale" aria-label="Female" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+	 		 <md-checkbox ng-model="user.prefFemale" aria-label="Female" class="md-warn">
 	    		Female: {{ user.prefFemale }}
 	 		 </md-checkbox>
 
-	 		  <md-checkbox ng-model="user.prefMale" aria-label="Male" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+	 		  <md-checkbox ng-model="user.prefMale" aria-label="Male" class="md-warn">
 	    		Male: {{ user.prefMale }}
-	 		 </md-checkbox>
-
-	 		  <md-checkbox ng-model="user.prefNA" aria-label="Doesn't Matter" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
-	    		Doesn't Matter: {{ user.prefNA }}
 	 		 </md-checkbox>
 
 	</div>
@@ -58,5 +54,5 @@ Please indicate your preferences for your ideal roomate!
 	        <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
 	      </md-input-container>
     `<section layout="row" layout-sm="column" layout-align="center center">
-      <span><md-button ng-click="alert()">Submit</md-button></span>
+      <span><md-button ng-click="save()">Submit</md-button></span>
     </section>
