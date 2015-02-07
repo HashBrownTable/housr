@@ -18,6 +18,22 @@ body {
     padding: 0.2em 0;
 }
 
+.site-sidenav .md-button {
+border-radius: 0;
+color: inherit;
+cursor: pointer;
+font-weight: 400;
+line-height: 40px;
+margin: 0;
+max-height: 40px;
+overflow: hidden;
+padding: 0px 16px;
+text-align: left;
+text-decoration: none;
+white-space: normal;
+width: 100%;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
