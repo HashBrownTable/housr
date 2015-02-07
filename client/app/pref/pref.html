@@ -2,14 +2,14 @@
 	<MD-INPUT-CONTAINER>
 Please indicate your preferences for your ideal roomate!
 
-	<div><label>Gender</label></div></br>
+	<div><label>Gender, not choosing will be considered "both"</label></div></br>
 
 	<div>
-	 		 <md-checkbox ng-model="user.prefFemale" aria-label="Female" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+	 		 <md-checkbox ng-model="user.prefFemale" aria-label="Female" class="md-warn">
 	    		Female: {{ user.prefFemale }}
 	 		 </md-checkbox>
 
-	 		  <md-checkbox ng-model="user.prefMale" aria-label="Male" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+	 		  <md-checkbox ng-model="user.prefMale" aria-label="Male" class="md-warn">
 	    		Male: {{ user.prefMale }}
 	 		 </md-checkbox>
 
