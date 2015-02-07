@@ -15,6 +15,7 @@ angular.module('housrApp')
       savePrefs: {
         method: 'POST',
         params: {
+          id: 'me',
           controller: 'savePrefs',
         }
       },
