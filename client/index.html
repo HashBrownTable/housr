@@ -37,9 +37,36 @@
       <md-list>
         <md-item>
           <md-item-content>
-            <md-button>
-              <span class="avatar"></span>
-              Blah
+            <md-button ng-href="/">
+              Home
+            </md-button>
+          </md-item-content>
+        </md-item>
+        <md-item>
+          <md-item-content>
+            <md-button ng-href="/matches">
+              Matches
+            </md-button>
+          </md-item-content>
+        </md-item>
+        <md-item>
+          <md-item-content>
+            <md-button ng-href="/chat">
+              Chat
+            </md-button>
+          </md-item-content>
+        </md-item>
+        <md-item>
+          <md-item-content>
+            <md-button ng-href="/pref">
+              Preferences
+            </md-button>
+          </md-item-content>
+        </md-item>
+        <md-item>
+          <md-item-content>
+            <md-button ng-href="/logout">
+              Logout
             </md-button>
           </md-item-content>
         </md-item>
@@ -50,12 +77,12 @@
       <md-toolbar md-scroll-shrink ng-if="showNav">
         <div class="md-toolbar-tools">
           <h3>
-            <span>Welcome</span>
+            <span>{{title}}</span>
           </h3>
         </div>
       </md-toolbar>
       <md-content layout="column" flex class="md-padding">
-          <div ui-view=""></div>
+          <div ui-view="" flex layout="column"></div>
       </md-content>
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -101,6 +128,8 @@
           <script src="app/account/signup/signup.controller.js"></script>
           <script src="app/admin/admin.controller.js"></script>
           <script src="app/admin/admin.js"></script>
+          <script src="app/chat/chat.controller.js"></script>
+          <script src="app/chat/chat.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
           <script src="app/pref/pref.controller.js"></script>

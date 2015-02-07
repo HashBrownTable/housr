@@ -1,59 +1,76 @@
 
-<MD-INPUT-CONTAINER>
+	<MD-INPUT-CONTAINER>
 Please indicate your preferences for your ideal roomate!
 
-<div ng-app="app" ng-controller="DemoCtrl" layout="column">
-  <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
-    <md-input-container>
-      <label>Gender</label>
- 		<md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
-    Checkbox 1: {{ data.cb1 }}
-  </md-checkbox>    </md-input-container>
+	<div><label>Gender</label></div></br>
 
+	<div>
+	 		 <md-checkbox ng-model="user.prefFemale" aria-label="Female" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+	    		Female: {{ user.prefFemale }}
+	 		 </md-checkbox>
 
-    <md-input-container>
-      <label>Email</label>
-      <input ng-model="user.email" type="email">
-    </md-input-container>
-  </md-content>
-  <md-content class="md-padding">
-    <form name="userForm">
-      <md-input-container flex>
-        <label>Company (Disabled)</label>
-        <input ng-model="user.company" disabled>
-      </md-input-container>
-      <div layout layout-sm="column">
-        <md-input-container flex>
-          <label>First Name</label>
-          <input ng-model="user.firstName" placeholder="Placeholder text">
-        </md-input-container>
-        <md-input-container flex>
-          <label>Last Name</label>
-          <input ng-model="theMax">
-        </md-input-container>
-      </div>
-      <md-input-container flex>
-        <label>Address</label>
-        <input ng-model="user.address">
-      </md-input-container>
-      <div layout layout-sm="column">
-        <md-input-container flex>
-          <label>City</label>
-          <input ng-model="user.city">
-        </md-input-container>
-        <md-input-container flex>
-          <label>State</label>
-          <input ng-model="user.state">
-        </md-input-container>
-        <md-input-container flex>
-          <label>Postal Code</label>
-          <input ng-model="user.postalCode">
-        </md-input-container>
-      </div>
-      <md-input-container flex>
-        <label>Biography</label>
-        <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
-      </md-input-container>
-    </form>
-  </md-content>
-</div>
+	 		  <md-checkbox ng-model="user.prefMale" aria-label="Male" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+	    		Male: {{ user.prefMale }}
+	 		 </md-checkbox>
+
+	 		  <md-checkbox ng-model="user.prefNA" aria-label="Doesn't Matter" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+	    		Doesn't Matter: {{ user.prefNA }}
+	 		 </md-checkbox>
+
+	</div>
+	      
+	      <div layout layout-sm="column">
+	        <md-input-container flex>
+	          <label>First Name</label>
+	          <input ng-model="user.firstName" placeholder="John">
+	        </md-input-container>
+	        <md-input-container flex>
+	          <label>Last Name</label>
+	          <input ng-model="user.lastName" placeholder="Apple">
+	        </md-input-container>
+	      </div>
+
+     	<div layout layout-sm="column">
+	        <md-input-container flex>
+	          <label>Min Price</label>
+	          <input ng-model="user.minPrice" placeholder="ex. 0">
+	        </md-input-container>
+	        <md-input-container flex>
+	          <label>Max Price</label>
+	          <input ng-model="user.maxPrice" placeholder="ex. 5000">
+	        </md-input-container>
+	        <md-input-container flex>
+	          <label>Roomates looking for</label>
+	          <input ng-model="user.rommates" placeholder="ex. 5000">
+	        </md-input-container>
+	      </div>
+
+		<md-input-container flex>
+	        <label>Neighbourhood</label>
+	        <input ng-model="user.neighourhood">
+	      </md-input-container>
+	      <md-input-container flex>
+	        <label>Address</label>
+	        <input ng-model="user.address">
+	      </md-input-container>
+	      <div layout layout-sm="column">
+	        <md-input-container flex>
+	          <label>City</label>
+	          <input ng-model="user.city">
+	        </md-input-container>
+	        <md-input-container flex>
+	          <label>State</label>
+	          <input ng-model="user.state">
+	        </md-input-container>
+	        <md-input-container flex>
+	          <label>Postal Code</label>
+	          <input ng-model="user.postalCode">
+	        </md-input-container>
+	      </div>
+	      <md-input-container flex>
+	        <label>About your self</label>
+	        <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
+	      </md-input-container>
+    <section layout="row" layout-sm="column" layout-align="center center">
+      <span><md-button ng-click="save()">Submit</md-button></span>
+    </section>
