@@ -57,9 +57,20 @@ angular.module('housrApp', [
       });
       console.log(next.url);
       $rootScope.showNav = true;
-      if((next.url == '/login')||(next.url == '/signup')){
+      if((next.url === '/login')||(next.url === '/signup')){
         console.log('showNav');
         $rootScope.showNav = false;
       }
     });
   });
+
+angular.module('housrApp').controller('NavCtrl', function ($scope, $rootScope, User) {
+  User.get(function(data){
+
+    console.log(data)
+    $scope.me = {
+      name: data.name
+    }
+
+  });
+});
