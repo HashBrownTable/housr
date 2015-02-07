@@ -1,0 +1,60 @@
+<md-list>
+    <md-item ng-repeat="item in todos">
+        <md-content>
+            <div layout="row" layout-align="center">
+                <md-card>
+                    <img src="/assets/images/washedout.png" alt="Washed Out">
+                    <md-card-content >
+                        <h2>{{item.what}}</h2>
+                        <h4>Name: {{item.who}}</h4>
+                        <h4>Age: {{item.age}}</h4>
+                        <h4>Price Range: {{item.price_range}}</h4>
+                        <h4>Gender Preference: {{item.gender_pref}}</h4>
+                        <h4>Preferred number of roommates: {{item.num_roommates}}</h4>
+                        <p>
+                          {{item.notes}}
+                        </p>
+                        
+                        <section layout="row" layout-sm="column" layout-align="center left">
+                            <md-button class="md-fab" aria-label="Trash">
+                                <md-icon icon="/assets/images/trash.jpg" style="width: 24px; height: 24px;"></md-icon>
+                            </md-button>
+                        </section>
+                        <section layout="row" layout-sm="column" layout-align="center right">
+                            <md-button class="pull-right md-fab" aria-label="Like">
+                                <md-icon icon="/assets/images/check.jpg" style="width: 24px; height: 24px;"></md-icon>
+                            </md-button>
+                        </section>
+                    </md-card-content>
+                </md-card>
+            </div>
+        </md-content>
+    </md-item>
+</md-list>
+
+
+
+
+  <!-- <md-content>
+    <md-list>
+      <md-item ng-repeat="item in todos">
+        <md-item-content>
+          <div class="md-tile-left">
+              <img ng-src="{{item.face}}" class="face" alt="{{item.who}}">
+          </div>
+          <div class="md-tile-content">
+            <h3>{{item.what}}</h3>
+            <h4>{{item.who}}</h4>
+            <h4>{{item.age}}</h4>
+            <h4>{{item.price_range}}</h4>
+            <h4>{{item.gender_pref}}</h4>
+            <h4>Prefered number of roomates: {{item.num_roommates}}</h4>
+            
+            <p>
+              {{item.notes}}
+            </p>
+          </div>
+        </md-item-content>
+      </md-item>
+    </md-list>
+  </md-content> -->

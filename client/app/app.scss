@@ -68,10 +68,25 @@ body {
     width: 2em;
     float: right;
   }
+  .name{
+    display: inline-block;
+    font-size: 0.8em;
+    float: right;
+    margin-top: 0.7em;
+    margin-left: 1em;
+  }
 }
 
 .nav-hamburger{
   margin-right: 1em;
+}
+
+.pull-right{
+  float: right;
+}
+
+.pull-left{
+  float: left;
 }
 
 /* Responsive: Portrait tablets and up */
