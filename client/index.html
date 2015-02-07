@@ -13,6 +13,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -21,14 +22,41 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="housrApp">
+  <body ng-app="housrApp" layout="row" flex>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div ui-view=""></div>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" md-component-id="left" md-is-locked-open="$media('gt-sm')">
+    <md-toolbar>
+        <h2 class="md-toolbar-tools">
+          <span>Housr</span>
+        </h2>
+      </md-toolbar>
+      <md-list>
+        <md-item>
+          <md-item-content>
+            <md-button>
+              <span class="avatar"></span>
+              Blah
+            </md-button>
+          </md-item-content>
+        </md-item>
+      </md-list>
+    </md-sidenav>
 
+    <div layout="column" flex class="content-wrapper" id="content">
+      <md-toolbar md-scroll-shrink>
+        <div class="md-toolbar-tools">
+          <h3>
+            <span>Welcome</span>
+          </h3>
+        </div>
+      </md-toolbar>
+      <md-content layout="column" flex class="md-padding">
+          <div ui-view=""></div>
+      </md-content>
+    </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -54,6 +82,9 @@
       <script src="bower_components/lodash/dist/lodash.compat.js"></script>
       <script src="bower_components/angular-socket-io/socket.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-aria/angular-aria.js"></script>
+      <script src="bower_components/angular-material/angular-material.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
     <!-- endbuild -->
