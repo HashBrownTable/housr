@@ -19,7 +19,4 @@ angular.module('housrApp')
         controller: 'SettingsCtrl',
         authenticate: true
       });
-
-
-
   });

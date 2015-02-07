@@ -18,11 +18,6 @@ Please indicate your preferences for your ideal roomate!
 	 		 </md-checkbox>
 
 	</div>
-
-	<div ng-app="app" ng-controller="DemoCtrl" layout="column">
-	  <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column">
-	     
-	    <form name="userForm">
 	      
 	      <div layout layout-sm="column">
 	        <md-input-container flex>
@@ -76,6 +71,6 @@ Please indicate your preferences for your ideal roomate!
 	        <label>About your self</label>
 	        <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
 	      </md-input-container>
-	    </form>
-	  </md-content>
-	</div>
+    <section layout="row" layout-sm="column" layout-align="center center">
+      <span><md-button ng-click="save()">Submit</md-button></span>
+    </section>
