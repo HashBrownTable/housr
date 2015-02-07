@@ -9,7 +9,7 @@ angular.module('housrApp')
     	alert('Placeholder');
     };
 
-    $scope.alert = function(){
+    $scope.save = function(){
     	alert ("what is that?");
     	var toLog = "Hello world";
 
