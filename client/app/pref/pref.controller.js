@@ -12,6 +12,7 @@ angular.module('housrApp')
     $scope.save = function(){
     	alert ("what is that?");
     	var toLog = "Hello world";
+    	$scope.user = {};
 
     	var firstName = $scope.user.firstName;
 		var lastName = $scope.user.lastName;
@@ -21,7 +22,7 @@ angular.module('housrApp')
 	    var preferedNumber = $scope.user.roomates;
 	    var preferedLocation = $scope.userpreferedLocation;
 
-	    var preferedGender = "";
+	    var preferedGender = "both";
 
 	    
 	    if($scope.user.prefFemale == true)
@@ -46,6 +47,15 @@ angular.module('housrApp')
 		console.log(preferedNumber);
 		console.log(preferedLocation);
 		console.log(preferedGender);
+
+		// var params = {
+		// 	firstName,
+		// 	lastName,
+		// 	priceRange
+		// }
+
+
+		User.savePrefs($scope.user);
 
     };
 
