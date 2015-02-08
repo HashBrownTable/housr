@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('housrApp')
-  .controller('MatchesCtrl', function ($scope, User, LikeDislike, $mdToast) {
+  .controller('MatchesCtrl', function ($scope, User, LikeDislike, $location) {
+    if(!window.localStorage.firstTime) {
+      $location.path('/pref');
+      window.localStorage.firstTime = 'no';
+    }
     User.matches(function(matches) {
       $scope.matches = matches;
     });
