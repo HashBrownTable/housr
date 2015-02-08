@@ -3,10 +3,16 @@ angular.module('housrApp')
   .controller('LikeCtrl', function ($scope, LikeDislike, User, $location) {
     $scope.message = 'Hello';
     $scope.likes = [];
-
     $scope.likePeople= [];
-    //$scope.dislikePeople = [];
     
+    $scope.dislike2 = function(){
+      alert('y');
+    };
+
+    $scope.dislike = function(){
+      alert('x');
+    };
+
     function populate(people, i){
         User.get({id: people.targetId}, function(userData){
           if(userData)
