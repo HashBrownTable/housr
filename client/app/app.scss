@@ -124,11 +124,11 @@ body {
 
 // Component styles are injected through grunt
 // injector
-@import 'Chats/chats.scss';
 @import 'account/login/login.scss';
 @import 'account/logout/logout.scss';
 @import 'admin/admin.scss';
 @import 'chat/chat.scss';
+@import 'chats/chats.scss';
 @import 'details/details.scss';
 @import 'like/like.scss';
 @import 'maps/maps.scss';
