@@ -8,5 +8,6 @@ angular.module('housrApp')
     }
     User.get({id: $stateParams.id}, function(user) {
       $scope.user = user;
+
     });
   });
