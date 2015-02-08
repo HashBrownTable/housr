@@ -38,9 +38,6 @@ angular.module('housrApp')
         targetId: user._id,
         type: 'like'
       }, function(data) {
-        if (data.msg) {
-          $mdToast.show($mdToast.simple().content(data.msg));
-        }
       });
 
       $scope.hide(user);

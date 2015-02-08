@@ -1,15 +1,16 @@
 'use strict';
 
 angular.module('housrApp')
-  .controller('ChatCtrl', function($scope, $rootScope, User, $stateParams, Chats, socket) {
+  .controller('ChatCtrl', function($scope, $rootScope, User, $stateParams, Chats, socket, $mdBottomSheet, $location) {
     var chatId = $stateParams.id;
     $scope.userDetails = {};
+    $rootScope.userDetails = $scope.userDetails;
     User.get(function(user) {
       Chats.get({id: chatId}, function(chat) {
         _.each(chat.people, function(e) {
           User.get({id: e}, function(userDet) {
             $scope.userDetails[e] = userDet;
-            $scope.people = _.pluck(_.values($scope.userDetails), 'name').join(' and ');
+            $scope.people = _.pluck(_.values($scope.userDetails), 'name').join(', ');
           });
         });
         $scope.moment = moment;
@@ -52,5 +53,61 @@ angular.module('housrApp')
           }
         };
       });
+      var u = user;
+      Chats.get(function(chats) {
+        _.each(chats.chats, function(chat) {
+          _.each(chat.people, function(person) {
+            if (person == u._id) {
+              return;
+            }
+            if (!$scope.userDetails[person]) {
+              User.get({id: person}, function(user) {
+                $rootScope.items = _.uniq($rootScope.items.concat([{
+                  name: user.name,
+                  '_id': user._id,
+                  picture: user.picture
+                }]), function(i) { return i.name });
+              });
+            } else {
+              var user = $scope.userDetails[person];
+              $rootScope.items = _.uniq($rootScope.items.concat([{
+                name: user.name,
+                picture: user.picture
+              }]), function(i) { return i.name });
+            }
+          });
+        });
+      });
     });
+    $rootScope.items = [];
+    $scope.showGridBottomSheet = function($event) {
+      $scope.alert = '';
+      $mdBottomSheet.show({
+        templateUrl: 'app/chat/bottom-sheet.html',
+        controller: 'GridBottomSheetCtrl',
+        targetEvent: $event
+      }).then(function(clickedItem) {
+        var params = { id: chatId, targetId: clickedItem._id }
+        console.log('chat', params)
+        Chats.add(params, function(cb) {
+          $location.path('/chat/'+cb._id);
+        });
+      });
+    };
+  })
+  .controller('GridBottomSheetCtrl', function($scope, $rootScope, $mdBottomSheet) {
+    $scope.items = /*[
+      { name: 'Hangout', icon: 'hangout' },
+      { name: 'Mail', icon: 'mail' },
+      { name: 'Message', icon: 'message' },
+      { name: 'Copy', icon: 'copy' },
+      { name: 'Facebook', icon: 'facebook' },
+      { name: 'Twitter', icon: 'twitter' },
+    ];*/
+    $rootScope.items;
+    $scope.listItemClick = function($index) {
+      var clickedItem = $scope.items[$index];
+
+      $mdBottomSheet.hide(clickedItem);
+    };
   });

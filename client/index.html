@@ -79,10 +79,12 @@
       <md-toolbar md-scroll-shrink ng-if="showNav">
         <div class="md-toolbar-tools">
           <md-button ng-click="toggleLeft()" hide-gt-md><svg class="nav-hamburger" xmlns="http://www.w3.org/2000/svg" width="30px" height="50%" viewBox="0 0 48 48"><path color="white" d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"/></svg></md-button>
-          <span>{{navIndex}}</span>
+          <span class="notification" ng-if="data.notificationCount > 0">
+            {{data.notificationCount}}
+          </span>
           <md-tabs md-selected="data.navIndex">
             <md-tab ng-href="/matches" label="Matches"></md-tab>
-            <md-tab ng-href="/chats" label="Chats"></md-tab>
+            <md-tab ng-href="/chats" label="Chats</span>"></md-tab>
             <md-tab ng-href="/landlords" label="Rentals"></md-tab>
           </md-tabs>
 

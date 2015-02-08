@@ -12,30 +12,28 @@
       </ul>
     </md-card>
 
+
     <md-list>
         <md-item ng-repeat="like in likePeople">
             <md-content>
               <md-card>
-
                 <div class="match-hero" style="background-image: url('{{like.picture || 'http://lorempixel.com/640/300/people/'+like.name}}');" alt="Washed Out"></div>
                 <md-card-content>
-                    <span ng-href="/details/{{like._id}}" class="match-name">{{like.name}}</span>
-                    <span class="pull-right match-pricerange">Price Range: $ {{like.priceRange[0]}} - {{like.priceRange[1]}}</span>
-                    <br><br>
-                    <div class="match-button-wrapper">
-                      <md-button ng-click="dislike()" class="md-fab trash-button" aria-label="Trash">
-                        <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
-                      </md-button>
-                      <a ng-href="/details/{{item._id}}" class="info-button" aria-label="Like">
-                        <p>info</p>
-                      </a>
-                      <md-button ng-click="dislike2()" class="pull-right md-fab" aria-label="Like">
-                        <md-icon icon="/assets/images/check.png" style="width: 24px; height: 24px;"></md-icon>
-                      </md-button>
-                    </div>
-
+                  <span ng-href="/details/{{like._id}}" class="match-name">{{like.name}}</span>
+                  <span class="pull-right match-pricerange">Price Range: $ {{like.priceRange[0]}} - {{like.priceRange[1]}}</span>
+                  <br><br>
+                  <div class="match-button-wrapper">
+                    <md-button ng-click="dislike(like)" class="md-fab trash-button" aria-label="Trash">
+                      <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
+                    </md-button>
+                    <a ng-href="/details/{{item._id}}" class="info-button" aria-label="Like">
+                      <p>info</p>
+                    </a>
+                    <md-button ng-click="stilllike(like)" class="pull-right md-fab" aria-label="Like">
+                      <md-icon icon="/assets/images/check.png" style="width: 24px; height: 24px;"></md-icon>
+                    </md-button>
+                  </div>
                 </md-card-content>
-
               </md-card>
             </md-content>
         </md-item>

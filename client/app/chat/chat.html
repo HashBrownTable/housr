@@ -1,10 +1,10 @@
-<h3>Conversation between {{people}}</h3>
+<h3>Conversation between {{people}} <md-button class="pull-right" ng-click="showGridBottomSheet()">Add</md-button></h3>
 <md-list flex class="scroll">
   <md-item ng-repeat="item in messages">
     <md-item-content>
       <div class="md-tile-left">
         <a ng-href="/details/{{item.id}}">
-          <img ng-src="{{userDetails[item.id].picture || 'http://lorempixel.com/50/50/abstract/'+userDetails[item.id].name}}" class="face" alt="{{userDetails[item.id].name}}">
+          <img ng-src="{{userDetails[item.id].picture || 'http://lorempixel.com/50/50/people/'+userDetails[item.id].name}}" class="face" alt="{{userDetails[item.id].name}}">
         </a>
       </div>
       <div class="md-tile-content">
