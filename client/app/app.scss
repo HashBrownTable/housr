@@ -52,22 +52,29 @@ body {
   text-decoration: none;
   white-space: normal;
   width: 100%;
+  margin-top: 0.5em;
 }
 
 /*global layout elements */
 
 .header-nav{
   float: left;
-  width: 50%;
+
+  .md-button{
+    display: inline-block;
+  }
 }
 
 .header-profile{
-  float: right;
-  width: 50%;
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+
   img{
     width: 2em;
     float: right;
   }
+
   .name{
     display: inline-block;
     font-size: 0.8em;

@@ -31,7 +31,7 @@
     <md-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" md-component-id="left" ng-if="showNav">
       <md-toolbar ng-controller="SidenavCtrl" >
         <a ng-href="/" ng-click="close()" class="logo"><img src="/assets/images/logo.png"></a>
-        <md-button id="close-sidenav" ng-click="close()">close</md-button>
+<!--         <md-button id="close-sidenav" ng-click="close()">close</md-button> -->
       </md-toolbar>
       <md-list>
         <md-item>
@@ -61,23 +61,21 @@
     <div layout="column" flex class="content-wrapper" id="content" ng-controller="NavCtrl">
       <md-toolbar md-scroll-shrink ng-if="showNav">
         <div class="md-toolbar-tools">
-          <md-button ng-click="toggleLeft()"><svg class="nav-hamburger" xmlns="http://www.w3.org/2000/svg" width="30px" height="50%" style="margin-top: 4px;" viewBox="0 0 48 48"><path color="white" d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"/></svg></md-button>
+          <md-button ng-click="toggleLeft()"><svg class="nav-hamburger" xmlns="http://www.w3.org/2000/svg" width="30px" height="50%" viewBox="0 0 48 48"><path color="white" d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"/></svg></md-button>
           <div class="header-nav">
             <md-button ng-href="/matches">
               Matches
             </md-button>
-            &nbsp;&nbsp;
             <md-button ng-href="/chats">
               Chats
             </md-button>
-            &nbsp;&nbsp;
             <md-button ng-href="/landlords">
               Rentals
             </md-button>
         </div>
 
         <div class="header-profile">
-          <a class="name" href="/prefs">{{me.name}}</a>
+          <a class="name" href="/prefs" hide-sm>{{me.name}}</a>
           <img src="/assets/images/profile-placeholder.png">
         </div>
 
