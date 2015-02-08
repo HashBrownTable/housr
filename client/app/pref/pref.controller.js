@@ -64,7 +64,7 @@ angular.module('housrApp')
       reader.onload = function(e) {
         var result = e.target.result;
         $scope.user.picture = result;
-        debugger;
+        //debugger;
       }
     };
     angular.element(document.querySelector('#fileInput')).on('change',handleFileSelect);
