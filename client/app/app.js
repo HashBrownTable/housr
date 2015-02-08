@@ -8,6 +8,7 @@ angular.module('housrApp', [
   'ui.router',
   'ngAnimate',
   'ngAria',
+  'ngImgCrop',
   'ngMaterial'
 ])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
@@ -77,10 +78,7 @@ angular.module('housrApp').controller('NavCtrl', function($scope, $rootScope, $m
     User.get(function(data) {
 
       console.log(data);
-      $scope.me = {
-        name: data.name
-      };
-
+      $scope.me = data;
       $scope.toggleLeft = function() {
         console.log('sidenav toggle');
         $mdSidenav('left').toggle();

@@ -3,7 +3,7 @@
 
 <md-content>
 	<md-card>
-		<img src="{{item.picture || 'http://lorempixel.com/500/240/abstract/'+item.name}}">
+		<img src="{{user.picture || 'http://lorempixel.com/500/240/abstract/'+user.name}}">
       <md-card-content>
       <h1>{{user.name}}</h1>
       <small>Last seen {{moment(user.lastOnline).fromNow()}}.</small>

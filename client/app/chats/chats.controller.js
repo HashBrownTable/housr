@@ -24,6 +24,7 @@ angular.module('housrApp')
               console.log(recipientUserId);
               User.get({id: recipientUserId}, function(userData) {
                 $scope.chats[i].names = userData.name;
+                $scope.chats[i].face = userData.picture;
               });
             }
           });
