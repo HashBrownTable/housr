@@ -1,12 +1,26 @@
 'use strict';
 
 angular.module('housrApp')
-  .controller('MatchesCtrl', function ($scope, User) {
+  .controller('MatchesCtrl', function ($scope, User, LikeDislike) {
     User.matches(function(matches) {
       $scope.matches = matches;
     });
-    $scope.hide = function(user) {
+    $scope.dislike = function(user) {
+      LikeDislike.save({
+        targetId: user._id,
+        type: 'dislike',
+      });
+      $scope.hide(user);
     }
-    $scope.show = function(user) {
+    $scope.like = function(user) {
+      LikeDislike.save({
+        targetId: user._id,
+        type: 'like',
+      });
+
+      $scope.hide(user);
+    }
+    $scope.hide = function(user) {
+      debugger;
     }
   });

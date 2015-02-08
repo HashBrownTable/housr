@@ -28,7 +28,8 @@ angular.module('housrApp')
       matches: {
         method: 'GET',
         params: {
-          id:''
+          id:'',
+          controller: 'matches'
         },
         isArray: true
       }

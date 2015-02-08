@@ -5,7 +5,7 @@ var Likedislike = require('./likedislike.model');
 
 // Get list of likedislikes
 exports.index = function(req, res) {
-  Likedislike.find(function (err, likedislikes) {
+  Likedislike.find({ownerId: req.user._id}, function (err, likedislikes) {
     if(err) { return handleError(res, err); }
     return res.json(200, likedislikes);
   });
@@ -22,7 +22,7 @@ exports.show = function(req, res) {
 
 // Creates a new likedislike in the DB.
 exports.create = function(req, res) {
-  Likedislike.create(req.body, function(err, likedislike) {
+  Likedislike.create({ownerId: req.user._id, targetId: req.body.targetId, type: req.body.type}, function(err, likedislike) {
     if(err) { return handleError(res, err); }
     return res.json(201, likedislike);
   });

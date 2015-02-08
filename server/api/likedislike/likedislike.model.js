@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 var LikedislikeSchema = new Schema({
   ownerId: String,
   targetId: String,
-  type: String // 'like' or 'hide'
+  type: String // 'like' or 'dislike'
 });
 
 module.exports = mongoose.model('Likedislike', LikedislikeSchema);
