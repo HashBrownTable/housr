@@ -9,7 +9,10 @@ angular.module('housrApp')
     	alert('Placeholder');
     };
 
-    $scope.user = User.get(function(data) {});
+    User.get(function(data) {
+      console.log(data);
+      $scope.user = data;
+    });
 
     $scope.check = function(){
 
