@@ -1,7 +1,12 @@
 # ![Housr](https://raw.githubusercontent.com/HashBrownTable/housr/master/etc/banner.png)
 
+Have you ever struggled with finding roommates when you first moved into a new city? How about finding the perfect place, but can't afford it unless you share the cost with someone... Are you a single parent, struggling to find a housing partner as an  affordable option for your family? Are you a student, low income and in debt, trying to make ends meet...
 
-Housr (pronounced House-er) is a roommate finding service targeted towards anyone who would prefer to save some money by pooling money with a group of people.
+To address these problems, we have envisioned a roommate finding solution -- Housr. 
+
+#What is Housr?
+Housr is a roommate finding service that help match you up with potential roommates. 
+
 
 ## Screenshots
 
