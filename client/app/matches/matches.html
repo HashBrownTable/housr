@@ -25,9 +25,9 @@
                             <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
                           </md-button>
 
-                          <md-button ng-href="/details/{{item._id}}" aria-label="View">
-                              read bio
-                          </md-button>
+                          <a ng-href="/details/{{item._id}}" class="info-button" aria-label="Like">
+                            <p>i</p>
+                          </a>
 
                           <md-button ng-click="like(item)" class="pull-right md-fab" aria-label="Like">
                             <md-icon icon="/assets/images/check.png" style="width: 24px; height: 24px;"></md-icon>
