@@ -3,6 +3,9 @@
 var _ = require('lodash');
 var Match = require('./match.model');
 
+
+var Chat = require('../match/match.model');
+
 // Get list of matchs
 exports.index = function(req, res) {
   var userId = req.user._id;
@@ -18,6 +21,18 @@ exports.show = function(req, res) {
     if(err) { return handleError(res, err); }
     if(!match) { return res.send(404); }
     return res.json(match);
+  });
+};
+
+// Get a single match
+exports.add = function(req, res) {
+  console.log(req.params);
+  Match.findById(req.body.id, function (err, match) {
+    if(err) { return handleError(res, err); }
+    if(!match) { return res.send(404); }
+    Chat.create({people: match.people.concat([req.body.targetId]), messages: [], lastChanged: new Date()}, function(err, chat) {
+      return res.json(chat);
+    });
   });
 };
 

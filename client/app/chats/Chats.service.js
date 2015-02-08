@@ -8,6 +8,12 @@ angular.module('housrApp')
       get: {
         method: 'GET',
         params: {}
+      },
+      add: {
+        method: 'POST',
+        params: {
+          controller: 'add',
+        }
       }
 	  });
   });

@@ -1,0 +1,13 @@
+<md-bottom-sheet class="md-grid">
+  <h4>Select someone to add to the conversation.</h4>
+  <md-list>
+    <md-item ng-repeat="item in items">
+      <md-button class="md-grid-item-content" aria-label="{{item.name}}" ng-click="listItemClick($index)">
+        <div class="md-icon-container">
+          <img src="{{item.picture || 'http://lorempixel.com/50/50/people/'+item.name}} " class="face">
+        </div>
+        <p class="md-grid-text"> {{ item.name }} </p>
+      </md-button>
+    </md-item>
+  </md-list>
+</md-bottom-sheet>
