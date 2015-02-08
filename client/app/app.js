@@ -64,7 +64,7 @@ angular.module('housrApp', [
     });
   });
 
-angular.module('housrApp').controller('NavCtrl', function ($scope, $rootScope, $mdSidenav, User) {
+angular.module('housrApp').controller('NavCtrl', function ($scope, $rootScope, $mdSidenav, User, $location) {
     User.get(function(data){
 
       console.log(data);
@@ -77,6 +77,18 @@ angular.module('housrApp').controller('NavCtrl', function ($scope, $rootScope, $
         $mdSidenav('left').toggle();
       };
 
+    });
+    $scope.data = {
+      navIndex: 0
+    };
+    if ($location.path().match('/chat')) {
+      $scope.data.navIndex = 1;
+    }
+    if ($location.path().match('/landlords')) {
+      $scope.data.navIndex = 2;
+    }
+    $scope.$watch('data.navIndex', function(i) {
+      $location.path($('md-tab').eq(i).attr('ng-href'));
     });
   });
 

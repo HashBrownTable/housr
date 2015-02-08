@@ -50,13 +50,6 @@
         </md-item>
         <md-item>
           <md-item-content>
-            <md-button ng-href="/details/54d6b4a4e9080cfe838b11b3">
-              details for debug
-            </md-button>
-          </md-item-content>
-        </md-item>
-        <md-item>
-          <md-item-content>
             <md-button ng-href="/likes">
               Likes
             </md-button>
@@ -76,17 +69,12 @@
       <md-toolbar md-scroll-shrink ng-if="showNav">
         <div class="md-toolbar-tools">
           <md-button ng-click="toggleLeft()" hide-gt-md><svg class="nav-hamburger" xmlns="http://www.w3.org/2000/svg" width="30px" height="50%" viewBox="0 0 48 48"><path color="white" d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"/></svg></md-button>
-          <div class="header-nav">
-            <md-button ng-href="/matches">
-              Matches
-            </md-button>
-            <md-button ng-href="/chats">
-              Chats
-            </md-button>
-            <md-button ng-href="/landlords">
-              Rentals
-            </md-button>
-        </div>
+          <span>{{navIndex}}</span>
+<md-tabs md-selected="data.navIndex">
+  <md-tab ng-href="/matches" label="Matches"></md-tab>
+  <md-tab ng-href="/chats" label="Chats"></md-tab>
+  <md-tab ng-href="/landlords" label="Rentals"></md-tab>
+</md-tabs>
 
         <div class="header-profile">
           <a class="name" href="/prefs" hide-sm>{{me.name}}</a>
