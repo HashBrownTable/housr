@@ -22,7 +22,9 @@ exports.show = function(req, res) {
 
 // Creates a new likedislike in the DB.
 exports.create = function(req, res) {
-  Likedislike.create({ownerId: req.user._id, targetId: req.body.targetId, type: req.body.type}, function(err, likedislike) {
+  var toCreate = {ownerId: req.user._id, targetId: req.body.targetId, type: req.body.type};
+  console.log(toCreate);
+  Likedislike.create(toCreate, function(err, likedislike) {
     if(err) { return handleError(res, err); }
     return res.json(201, likedislike);
   });

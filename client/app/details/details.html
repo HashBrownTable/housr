@@ -1,5 +1,11 @@
-<img ng-src="{{user}}">
-<h1>{{user.name}}</h1>
+<md-content>
+	<md-card>
+		<img src="{{item.picture || 'http://lorempixel.com/500/240/abstract/'+item.name}}" alt="Washed Out">
+	</md-card>
+      <md-card-content>
+		<h1>{{user.name}}</h1>
+		<h3>About</h3>
+		<p>{{user.description}}</p>
+	  </md-card-content>
+</md-content>
 
-<h3>About</h3>
-<p>{{user.description}}</p>

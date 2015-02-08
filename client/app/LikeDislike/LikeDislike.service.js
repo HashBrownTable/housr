@@ -2,7 +2,7 @@
 
 angular.module('housrApp')
   .factory('LikeDislike', function ($resource) {
-    return $resource('/api/LikeDislike/:id/:controller', {
+    return $resource('/api/likedislikes/:id/:controller', {
       id: '@_id'
     },
     {
