@@ -5,9 +5,9 @@
                 <md-card>
 
                     <img src="{{item.picture || 'http://lorempixel.com/500/240/abstract/'+item.name}}" alt="Washed Out">
-                    <md-card-content ng-href="/details/{{item._id}}">
+                    <md-card-content>
 <!--                         <h2>{{item.what}}</h2> -->
-                        <span class="match-name">{{item.name}}</span>
+                        <span ng-href="/details/{{item._id}}" class="match-name">{{item.name}}</span>
 <!--                         <h4>Age: {{item.age}}</h4> -->
                         <span class="pull-right match-pricerange">Price Range: $ {{item.priceRange[0]}} - {{item.priceRange[1]}}</span>
                         <br><br>
@@ -16,6 +16,10 @@
                         <p>
                           {{item.notes}}
                         </p> -->
+
+                        <md-button ng-href="/details/{{item._id}}" aria-label="View">
+                            <md-icon icon="/assets/images/check.png" style="width: 50px; height: 50px;"></md-icon>
+                        </md-button>
 
                         <div class="match-button-wrapper">
                           <md-button ng-click="dislike(item)" class="md-fab trash-button" aria-label="Trash">
