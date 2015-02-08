@@ -14,10 +14,10 @@ To address the barrier in communication and facilitate micro conversations, we h
 
 ## Team Members
 
-* [Tristan Rice](https://github.com/d4l3k)
-* [Vincent Chan](https://github.com/cvince)
-* [Unnati Sapre](https://github.com/unnatisapre)
-* [Jenny Lian](https://github.com/jennylia)
+* [Tristan Rice](https://github.com/d4l3k) :person_with_blond_hair:
+* [Vincent Chan](https://github.com/cvince) :person_with_blond_hair:
+* [Unnati Sapre](https://github.com/unnatisapre) :person_with_blond_hair:
+* [Jenny Lian](https://github.com/jennylia) :person_with_blond_hair:
 
 
 ## Screenshots
@@ -25,8 +25,6 @@ To address the barrier in communication and facilitate micro conversations, we h
 ![Login Page](https://raw.githubusercontent.com/HashBrownTable/housr/master/etc/pic1.png)
 
 ![Matches](https://raw.githubusercontent.com/HashBrownTable/housr/master/etc/pic2.png)
-
-![Chats](https://raw.githubusercontent.com/HashBrownTable/housr/master/etc/pic3.png)
 
 ![Menu](https://raw.githubusercontent.com/HashBrownTable/housr/master/etc/pic4.png)
 
