@@ -13,12 +13,16 @@ angular.module('housrApp')
           });
         });
         $scope.moment = moment;
-        setInterval(function() {
+        // TODO: STOP POLLING
+        var interval = setInterval(function() {
           Chats.get({id: chatId}, function(chat) {
             $scope.messages = chat.messages;
             $scope.scrollBottom();
           });
         }, 500);
+        $scope.$on("$destroy", function(){
+          clearInterval(interval);
+        });
         $scope.messages = chat.messages;
         $scope.scrollBottom = function() {
           _.defer(function() {
