@@ -17,17 +17,17 @@ angular.module('housrApp')
 
     		data.forEach(function(Likes,i){
     			User.get({id: Likes.targetId},function(x){
-    				//$scope.Likes[i].userData = x;
+    				$scope.Likes[i].userData = x;
     				$scope.Likes[i].name = x.name;
     				$scope.Roomates.push(x.name);
-    				console.log(x.name);
+    				//console.log(x.name);
     				//console.log("scopeLikes1");
     				//console.log($scope.Likes);
     			});
     		});
     	
     	//console.log("scopeLikes2");
-    	console.log($scope.Roomates);
+    	//console.log($scope.Roomates);
     });
     
 
