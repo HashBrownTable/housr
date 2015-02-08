@@ -29,15 +29,17 @@ exports.create = function(req, res) {
     console.log(toCreate);
     Likedislike.create(toCreate, function(err, likedislike) {
       if(err) { return handleError(res, err); }
-      Likedislike.findOne({ownerId: req.body.targetId, targetId: req.user._id, type: 'like'}, function(err, blah) {
-        if(err) { return handleError(res, err); }
-        if (blah) {
-          Chat.create({people: [req.body.targetId.toString(), req.user._id.toString()], messages: [], lastChanged: new Date()});
-          return res.json(201, {msg: 'You have created a new match!'});
-        } else {
-          return res.json(201, {});
-        }
-      });
+      if (likedislike.type === 'like') {
+        Likedislike.findOne({ownerId: req.body.targetId, targetId: req.user._id, type: 'like'}, function(err, blah) {
+          if(err) { return handleError(res, err); }
+          if (blah) {
+            Chat.create({people: [req.body.targetId.toString(), req.user._id.toString()], messages: [], lastChanged: new Date()});
+            return res.json(201, {msg: 'You have created a new match!'});
+          } else {
+            return res.json(201, {});
+          }
+        });
+      }
     });
   });
 };
