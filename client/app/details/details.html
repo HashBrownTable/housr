@@ -1,7 +1,7 @@
 
 <div layout="row" layout-align="center">
 
-<md-content>
+<md-content ng-controller="DetailsCtrl">
 	<md-card>
 		<img src="{{item.picture || 'http://lorempixel.com/500/240/abstract/'+item.name}}" alt="Washed Out">
 	
@@ -29,8 +29,12 @@
 		<span ng-show="user.priceRange[0] && user.priceRange[1]">
 		<h3 >Price Range</h3>
 		<p>$ {{user.priceRange[0]}} - {{user.priceRange[1]}}</p>
-		<span>
+		</span>
 
+		<h3>Preferred Roomates</h3>
+		<ul ng-repeat="x in Roomates">
+			<p>{{x}}<p>
+		</ul>
 
 	  </md-card-content>
 
