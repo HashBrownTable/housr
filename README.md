@@ -20,6 +20,8 @@ To address the barrier in communication and facilitate micro conversations, we h
 
 ![Chats](https://raw.githubusercontent.com/HashBrownTable/housr/master/etc/pic3.png)
 
+![Menu](https://raw.githubusercontent.com/HashBrownTable/housr/master/etc/pic4.png)
+
 
 
 ## Technical Details
