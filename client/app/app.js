@@ -62,6 +62,16 @@ angular.module('housrApp', [
         console.log('showNav');
         $rootScope.showNav = false;
       }
+
+      $rootScope.matchesNav = 'matches';
+      if (next.url === '/matches'){
+        $rootScope.matchesNav = 'matches';
+      }else if(next.url === '/like'){
+        $rootScope.matchesNav = 'like';
+      }else if(next.url === '/dislike'){
+        $rootScope.matchesNav = 'dislike';
+      }
+
       if (next.url === '/') {
         $rootScope.data.navIndex = 0;
       } else if (next.url.match('/chats')) {

@@ -1,9 +1,9 @@
 
+<md-content>
 <div layout="row" layout-align="center">
 
-<md-content>
 	<md-card>
-		<img src="{{user.picture || 'http://lorempixel.com/500/240/abstract/'+user.name}}">
+		<img src="{{user.picture || 'http://lorempixel.com/640/300/people/'+user.name}}">
       <md-card-content>
       <h1>{{user.name}}</h1>
       <small>Last seen {{moment(user.lastOnline).fromNow()}}.</small>
@@ -12,7 +12,7 @@
 
 		<h3>Roommate Preferences</h3>
     <p>
-      {{user.gender}}<span  ng-show="user.preferedGender"> looking for {{user.preferedGender}} roommates<span>.
+      {{user.gender}}<span ng-show="user.preferedGender"> looking for {{user.preferedGender}} roommates</span>.
       {{user.age}} years old<span ng-show="user.ageRange[0] || user.ageRange[1]"> looking for {{user.ageRange[0]}} - {{user.ageRange[1]}}</span>.</p>
     </p>
 
@@ -20,7 +20,6 @@
 		<h3 >Rental Details</h3>
     <p>Looking to rent<span ng-show="user.priceRange[0] && user.priceRange[1]"> for ${{user.priceRange[0]}} - {{user.priceRange[1]}}</span><span ng-show="user.preferedLocation"> in <a ng-href="https://www.google.com/maps?q={{user.preferedLocation}}">{{user.preferedLocation}}</a></span>.</p>
 
-		</span>
 
 		<h3>Potential Roommates</h3>
 		<ul ng-repeat="x in Roommates">
@@ -30,7 +29,7 @@
 	  </md-card-content>
 
 	</md-card>
-</md-content>
+
 
 </div>
-
+</md-content>

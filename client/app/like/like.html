@@ -1,44 +1,44 @@
 <div layout="row" layout-align="center center" flex ng-if="likePeople.length === 0">
   <h3>No more matches found!</h3>
 </div>
-<md-list>
-    <md-item ng-repeat="like in likePeople">
-        <md-content>
-            <div layout="row" layout-align="center">
-                <md-card>
 
-                    <img src="{{like.picture || 'http://lorempixel.com/500/240/abstract/'+like.name}}" alt="Washed Out">
-                    <md-card-content>
-<!--                         <h2>{{like.what}}</h2> -->
-                        <span ng-href="/details/{{like._id}}" class="match-name">{{like.name}}</span>
-<!--                         <h4>Age: {{like.age}}</h4> -->
-                        <span class="pull-right match-pricerange">Price Range: $ {{like.priceRange[0]}} - {{like.priceRange[1]}}</span>
-                        <br><br>
-<!--                         <h4>Gender Preference: {{like.gender_pref}}</h4>
-                        <h4>Preferred number of roommates: {{like.num_roommates}}</h4>
-                        <p>
-                          {{like.notes}}
-                        </p> -->
-                        <!-- </br> -->
-                        <md-button ng-href="/details/{{like._id}}" aria-label="View">
-                            read bio
-                        </br></br>
-                        </md-button>
+<div layout="row" layout-align="center">
+  <div flex="55">
+    <md-card class="matches-nav" ng-if="likePeople.length > 0">
+      <ul>
+        <li class="{{matchesNav==='matches' ? 'active' : '' }}"><a href="/matches">Your <span class="num">{{matches.length}}</span> Matches</a></li>
+        <li class="{{matchesNav==='matches' ? 'like' : '' }}"><a href="/like">Your <span class="num">{{numLikes}}</span> Likes</a></li>
+        <li class="{{matchesNav==='matches' ? 'dislike' : '' }}"><a href="/dislike">Your <span class="num">{{numDislikes}}</span> Dislike{{numDislikes>1 ? 's' : ''}}</a></li>
+      </ul>
+    </md-card>
 
-                        <div class="match-button-wrapper">
-                          <md-button ng-click="dislike()" class="md-fab trash-button" aria-label="Trash">
-                            <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
-                          </md-button>
+    <md-list>
+        <md-item ng-repeat="like in likePeople">
+            <md-content>
+              <md-card>
 
-                          <md-button ng-click="dislike2()" class="pull-right md-fab" aria-label="Like">
-                            <md-icon icon="/assets/images/check.png" style="width: 24px; height: 24px;"></md-icon>
-                          </md-button>
-                        </div>
+                <div class="match-hero" style="background-image: url('{{like.picture || 'http://lorempixel.com/640/300/people/'+like.name}}');" alt="Washed Out"></div>
+                <md-card-content>
+                    <span ng-href="/details/{{like._id}}" class="match-name">{{like.name}}</span>
+                    <span class="pull-right match-pricerange">Price Range: $ {{like.priceRange[0]}} - {{like.priceRange[1]}}</span>
+                    <br><br>
+                    <div class="match-button-wrapper">
+                      <md-button ng-click="dislike()" class="md-fab trash-button" aria-label="Trash">
+                        <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
+                      </md-button>
+                      <a ng-href="/details/{{item._id}}" class="info-button" aria-label="Like">
+                        <p>info</p>
+                      </a>
+                      <md-button ng-click="dislike2()" class="pull-right md-fab" aria-label="Like">
+                        <md-icon icon="/assets/images/check.png" style="width: 24px; height: 24px;"></md-icon>
+                      </md-button>
+                    </div>
 
-                    </md-card-content>
+                </md-card-content>
 
-                </md-card>
-            </div>
-        </md-content>
-    </md-item>
-</md-list>
+              </md-card>
+            </md-content>
+        </md-item>
+    </md-list>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 .match-button-wrapper{
+  position: relative;
   .trash-button{
     background-color: #999!important;
   }
@@ -25,7 +26,7 @@
   border: 1px solid #999;
   border-radius: 1.5em;
   text-decoration: none;
-  bottom: 1.5em;
+  top: 0.25em;
   &:hover{
     border-color: $blue;
     p{
@@ -40,5 +41,45 @@
     margin-top: 0.25em;
     color: #999;
     font-weight: 100;
+    text-align: center;
   }
+}
+
+.matches-nav{
+  overflow: hidden;
+  ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    li{
+      display: inline-block;
+      width: 32%;
+      text-align: center;
+      padding: 1em 0;
+      &.active{
+        background: $pink;
+        a{
+          color: #fff;
+        }
+      }
+      a{
+        text-decoration: none;
+        color: #666;
+        font-weight: 100;
+        .num{
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.match-item{
+  overflow: hidden;
+}
+
+.match-hero{
+  width: 100%;
+  padding-top: 50%;
+  background-size: cover;
 }

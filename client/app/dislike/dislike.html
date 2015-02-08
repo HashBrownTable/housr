@@ -1,45 +1,69 @@
-<md-list>
+
+
+
 <div layout="row" layout-align="center center" flex ng-if="likePeople.length === 0">
-  <h3>No more matches found!</h3>
+    <h3>No more matches found!</h3>
 </div>
 <!-- Since I am persisting both likes and dislike data in the same controller, I think I will be using the LikeCtrl for now, might be a good idea to refactor this logic -->
-    <md-item ng-controller="app.LikeCtrl" ng-repeat="dislike in dislikePeople">
-        <md-content>
-            <div layout="row" layout-align="center">
-                <md-card>
 
-                    <img src="{{dislike.picture || 'http://lorempixel.com/500/240/abstract/'+dislike.name}}" alt="Washed Out">
-                    <md-card-content>
-<!--                         <h2>{{dislike.what}}</h2> -->
-                        <span ng-href="/details/{{dislike._id}}" class="match-name">{{dislike.name}}</span>
-<!--                         <h4>Age: {{dislike.age}}</h4> -->
-                        <span class="pull-right match-pricerange">Price Range: $ {{dislike.priceRange[0]}} - {{dislike.priceRange[1]}}</span>
-                        <br><br>
-<!--                         <h4>Gender Preference: {{dislike.gender_pref}}</h4>
-                        <h4>Preferred number of roommates: {{dislike.num_roommates}}</h4>
-                        <p>
-                          {{dislike.notes}}
-                        </p> -->
-                        <!-- </br> -->
-                        <md-button ng-href="/details/{{dislike._id}}" aria-label="View">
-                            read bio
-                        </br></br>
-                        </md-button>
+<div layout="row" layout-align="center">
+    <div flex="55">
+        <md-card class="matches-nav">
+            <ul>
+                <li class="{{matchesNav==='matches' ? 'active' : '' }}">
+                    <a href="/matches">
+                        Your
+                        <span class="num">{{matches.length}}</span>
+                        Matches
+                    </a>
+                </li>
+                <li class="{{matchesNav==='like' ? 'active' : '' }}">
+                    <a href="/like">
+                        Your
+                        <span class="num">{{numLikes}}</span>
+                        Likes
+                    </a>
+                </li>
+                <li class="{{matchesNav==='dislike' ? 'active' : '' }}">
+                    <a href="/dislike">
+                        Your
+                        <span class="num">{{dislikePeople.length}}</span>
+                        Dislike{{numDislikes>1 ? 's' : ''}}
+                    </a>
+                </li>
+            </ul>
+        </md-card>
 
-                        <div class="match-button-wrapper">
-                          <md-button ng-controller="DislikeCtrl" ng-click="dislike()" class="md-fab trash-button" aria-label="Dislike">
-                            <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
-                          </md-button>
+        <md-list>
+            <md-item ng-controller="app.LikeCtrl" ng-repeat="dislike in dislikePeople">
+                <md-content>
+                    <md-card class="match-item">
 
-                          <md-button ng-controller="DislikeCtrl" ng-click="like()" class="pull-right md-fab" aria-label="Like">
-                            <md-icon icon="/assets/images/check.png" style="width: 24px; height: 24px;"></md-icon>
-                          </md-button>
-                        </div>
+                        <div class="match-hero" style="background-image: url('{{dislike.picture || 'http://lorempixel.com/640/300/people/'+dislike.name}}');" alt="Washed Out"></div>
+                        <md-card-content>
+                            <span ng-href="/details/{{dislike._id}}" class="match-name">{{dislike.name}}</span>
+                            <span class="pull-right match-pricerange">
+                                Price Range: $ {{dislike.priceRange[0]}} - {{dislike.priceRange[1]}}
+                            </span>
+                            <br>
+                            <br>
+                            <div class="match-button-wrapper">
+                                <md-button ng-controller="DislikeCtrl" ng-click="dislike()" class="md-fab trash-button" aria-label="Dislike">
+                                    <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
+                                </md-button>
+                                <a ng-href="/details/{{item._id}}" class="info-button" aria-label="Like">
+                                    <p>info</p>
+                                </a>
+                                <md-button ng-controller="DislikeCtrl" ng-click="like()" class="pull-right md-fab" aria-label="Like">
+                                    <md-icon icon="/assets/images/check.png" style="width: 24px; height: 24px;"></md-icon>
+                                </md-button>
+                            </div>
 
-                    </md-card-content>
+                        </md-card-content>
 
-                </md-card>
-            </div>
-        </md-content>
-    </md-item>
-</md-list>
+                    </md-card>
+                </md-content>
+            </md-item>
+        </md-list>
+    </div>
+</div>
