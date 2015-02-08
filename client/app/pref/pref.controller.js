@@ -12,6 +12,22 @@ angular.module('housrApp')
     User.get(function(data) {
       console.log(data);
       $scope.user = data;
+      $scope.minPrice = data.priceRange.sort()[0];
+
+      $scope.maxPrice = _.map(data.priceRange, function(n) 
+        { 
+
+         var len = data.priceRange.length, max = -Infinity;
+              while (len--) {
+              if (data.priceRange[len] > max) 
+                {
+                    max = data.priceRange[len];
+                }
+              }
+              return max;
+            }
+          );
+
     });
 
     $scope.check = function(){
@@ -70,6 +86,8 @@ angular.module('housrApp')
 
 
       $scope.user.preferedGender = preferedGender;
+      $scope.user.priceRange.push($scope.user.minPrice);
+      $scope.user.priceRange.push($scope.user.maxPrice);
 
       User.savePrefs($scope.user);
 
