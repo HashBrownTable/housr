@@ -5,4 +5,8 @@ angular.module('housrApp')
     User.matches(function(matches) {
       $scope.matches = matches;
     });
+    $scope.hide = function(user) {
+    }
+    $scope.show = function(user) {
+    }
   });

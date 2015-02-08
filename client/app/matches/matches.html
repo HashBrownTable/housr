@@ -18,11 +18,11 @@
                         </p> -->
 
                         <div class="match-button-wrapper">
-                          <md-button class="md-fab trash-button" aria-label="Trash">
+                          <md-button ng-click="hide(item)" class="md-fab trash-button" aria-label="Trash">
                               <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
                           </md-button>
 
-                          <md-button class="pull-right md-fab" aria-label="Like">
+                          <md-button ng-click="like(item)" class="pull-right md-fab" aria-label="Like">
                               <md-icon icon="/assets/images/check.png" style="width: 24px; height: 24px;"></md-icon>
                           </md-button>
                         </div>
