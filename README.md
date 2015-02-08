@@ -7,10 +7,18 @@ To address these problems, we have envisioned a roommate finding solution -- Hou
 #What is Housr?
 Housr is a roommate finding service that help match you up with potential roommates. 
 
-When you sign up, we will ask you a little bit about yourself, such as your desired price range for rental, and then help you find some potential roommates who matches your preference.
-To address the barrier in communication and facilitate micro conversations, we have a chat platform that allows you to chat with people you would like to potentially live with and get to know them better.
+## How to use
+When you sign up, we will ask you a little bit about yourself, such as your desired price range for rental, and then help you find some potential roommates who matched your preference.
+
+To address the barrier in communication and facilitate micro conversations, we have a chat platform that allows you to chat with people you would like to potentially live with and get to know better.
 
 ## Team Members
+
+* [Tristan Rice](https://github.com/d4l3k)
+* [Vincent Chan](https://github.com/cvince)
+* [Unnati Sapre](https://github.com/unnatisapre)
+* [Jenny Lian](https://github.com/jennylia)
+
 
 ## Screenshots
 
