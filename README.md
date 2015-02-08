@@ -10,6 +10,7 @@ Housr is a roommate finding service that help match you up with potential roomma
 When you sign up, we will ask you a little bit about yourself, such as your desired price range for rental, and then help you find some potential roommates who matches your preference.
 To address the barrier in communication and facilitate micro conversations, we have a chat platform that allows you to chat with people you would like to potentially live with and get to know them better.
 
+## Team Members
 
 ## Screenshots
 
@@ -21,7 +22,7 @@ To address the barrier in communication and facilitate micro conversations, we h
 
 
 
-## Running the Code
+## Technical Details
 
 Housr is completely written in Javascript with AngularJS on the frontend and a Node.JS backend.
 
