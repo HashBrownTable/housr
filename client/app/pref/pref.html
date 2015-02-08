@@ -4,18 +4,18 @@ Please indicate your preferences for your ideal roomate!
 
 	<div><label>Gender, not choosing will be considered "both"</label></div></br>
 
-	<div>
+	<div layout layout-sm="row">
 	 		 <md-checkbox ng-model="user.prefFemale" aria-label="Female" class="md-warn">
-	    		Female: {{user.preferedGender == "female" || user.preferedGender == "both"}}
+	    		Female 
 	 		 </md-checkbox>
 
 	 		  <md-checkbox ng-model="user.prefMale" aria-label="Male" class="md-warn">
-	    		Male: {{ user.preferedGender == "male" || user.preferedGender == "both"}}
+	    		Male 
 	 		 </md-checkbox>
 
 	</div>
 
-	      <div layout layout-sm="column">
+	      <div  layout layout-sm="column">
 	        <md-input-container flex>
 	          <label>Name</label>
 	          <input ng-model="user.name" placeholder="John">
@@ -38,7 +38,7 @@ Please indicate your preferences for your ideal roomate!
 	        </md-input-container>
 	        <md-input-container flex>
 	          <label>Age Prefered</label>
-	          <input ng-model="user.age" placeholder="ex. 5000">
+	          <input ng-model="user.age" placeholder="ex. 30">
 	        </md-input-container>
 	      </div>
 
