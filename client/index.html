@@ -28,7 +28,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" md-component-id="left" ng-if="showNav">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" md-component-id="left" ng-if="showNav" md-is-locked-open="$media('gt-md')">
       <md-toolbar ng-controller="SidenavCtrl" >
         <a ng-href="/" ng-click="close()" class="logo"><img src="/assets/images/logo.png"></a>
 <!--         <md-button id="close-sidenav" ng-click="close()">close</md-button> -->
