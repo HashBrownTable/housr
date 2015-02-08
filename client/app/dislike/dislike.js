@@ -5,7 +5,7 @@ angular.module('housrApp')
     $stateProvider
       .state('dislike', {
         url: '/dislike',
-        templateUrl: 'app/dislike/dislike.html',
-        controller: 'DislikeCtrl'
+        templateUrl: 'app/like/like.html',
+        controller: 'LikeCtrl'
       });
   });

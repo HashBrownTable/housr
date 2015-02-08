@@ -1,5 +1,9 @@
 <md-list>
-    <md-item ng-repeat="dislike in dislikes">
+<div layout="row" layout-align="center center" flex ng-if="likePeople.length === 0">
+  <h3>No more matches found!</h3>
+</div>
+<!-- Since I am persisting both likes and dislike data in the same controller, I think I will be using the LikeCtrl for now, might be a good idea to refactor this logic -->
+    <md-item ng-controller="app.LikeCtrl" ng-repeat="dislike in dislikePeople">
         <md-content>
             <div layout="row" layout-align="center">
                 <md-card>
