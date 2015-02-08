@@ -33,18 +33,11 @@
         <a ng-href="/" ng-click="close()" class="logo"><img src="/assets/images/logo.png"></a>
 <!--         <md-button id="close-sidenav" ng-click="close()">close</md-button> -->
       </md-toolbar>
-      <md-list>
+      <md-list flex>
         <md-item>
           <md-item-content>
             <md-button ng-href="/pref">
               Preferences
-            </md-button>
-          </md-item-content>
-        </md-item>
-        <md-item>
-          <md-item-content>
-            <md-button ng-href="/logout">
-              Logout
             </md-button>
           </md-item-content>
         </md-item>
@@ -59,6 +52,15 @@
           <md-item-content>
             <md-button ng-href="/dislike">
               Dislikes
+            </md-button>
+          </md-item-content>
+        </md-item>
+      </md-list>
+      <md-list>
+        <md-item>
+          <md-item-content>
+            <md-button ng-href="/logout">
+              Logout
             </md-button>
           </md-item-content>
         </md-item>

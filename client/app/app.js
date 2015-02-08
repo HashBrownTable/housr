@@ -61,6 +61,15 @@ angular.module('housrApp', [
         console.log('showNav');
         $rootScope.showNav = false;
       }
+      if (next.url === '/') {
+        $rootScope.data.navIndex = 0;
+      } else if (next.url.match('/chats')) {
+        $rootScope.data.navIndex = 1;
+      } else if (next.url.match('/landlords')) {
+        $rootScope.data.navIndex = 2;
+      } else {
+        $rootScope.data.navIndex = 3;
+      }
     });
   });
 
@@ -79,14 +88,9 @@ angular.module('housrApp').controller('NavCtrl', function ($scope, $rootScope, $
 
     });
     $scope.data = {
-      navIndex: 0
+      navIndex: 3
     };
-    if ($location.path().match('/chat')) {
-      $scope.data.navIndex = 1;
-    }
-    if ($location.path().match('/landlords')) {
-      $scope.data.navIndex = 2;
-    }
+    $rootScope.data = $scope.data;
     $('body').on('click', 'md-tab', function() {
       var i = $scope.data.navIndex;
       $location.path($('md-tab').eq(i).attr('ng-href'));
