@@ -10,7 +10,7 @@ angular.module('housrApp')
         _.each(chat.people, function(e) {
           User.get({id: e}, function(userDet) {
             $scope.userDetails[e] = userDet;
-            $scope.people = _.pluck(_.values($scope.userDetails), 'name').join(' and ');
+            $scope.people = _.pluck(_.values($scope.userDetails), 'name').join(', ');
           });
         });
         $scope.moment = moment;

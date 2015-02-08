@@ -172,14 +172,33 @@ md-toolbar {
 .hide md-tabs-ink-bar {
   display: none;
 }
+.notification {
+  position: relative;
+  left: 187px;
+  display: inline-block;
+  z-index: 1;
+  border-radius: 100%;
+  top: -5px;
+
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+
+  font-size: 14px;
+  text-align: center;
+  margin: -10px;
+  font-family: RobotoDraft, Roboto, 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+
+}
 
 // Component styles are injected through grunt
 // injector
-@import 'Chats/chats.scss';
 @import 'account/login/login.scss';
 @import 'account/logout/logout.scss';
 @import 'admin/admin.scss';
 @import 'chat/chat.scss';
+@import 'chats/chats.scss';
 @import 'details/details.scss';
 @import 'dislike/dislike.scss';
 @import 'like/like.scss';

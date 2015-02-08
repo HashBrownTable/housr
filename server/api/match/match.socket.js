@@ -5,6 +5,8 @@
 'use strict';
 
 var Match = require('./match.model');
+var User = require('../user/user.model');
+var _ = require('lodash');
 
 exports.register = function(socket) {
   Match.schema.post('save', function (doc) {
@@ -28,6 +30,24 @@ exports.register = function(socket) {
 function onSave(socket, doc, cb) {
   console.log("UPDATING", doc);
   socket.emit('match:'+doc._id+':save', doc.messages);
+  if (doc.messages.length > 0) {
+    var msg = _.last(doc.messages)
+    console.log(msg)
+    User.findById(msg.id, function(err, usr) {
+      socket.emit('notification', {
+        targets: doc.people,
+        type: 'chat',
+        id: doc._id,
+        msg: usr.name + ': '+ msg.text
+      });
+    })
+  } else {
+    socket.emit('notification', {
+      targets: doc.people,
+      type: 'match',
+      msg: "You've made a new match!"
+    });
+  }
 }
 
 function onUpdate(socket, doc, cb) {

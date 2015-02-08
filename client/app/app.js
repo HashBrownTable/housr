@@ -74,23 +74,37 @@ angular.module('housrApp', [
     });
   });
 
-angular.module('housrApp').controller('NavCtrl', function($scope, $rootScope, $mdSidenav, User, $location) {
-    User.get(function(data) {
-
-      console.log(data);
-      $scope.me = data;
-      $scope.toggleLeft = function() {
-        console.log('sidenav toggle');
-        $mdSidenav('left').toggle();
-      };
-
+angular.module('housrApp').controller('NavCtrl', function($scope, $rootScope, $mdSidenav, User, $location, socket, $mdToast) {
+    var updateMe = function(){
+      User.get(function(data) {
+        console.log(data);
+        $scope.me = data;
+        $scope.toggleLeft = function() {
+          console.log('sidenav toggle');
+          $mdSidenav('left').toggle();
+        };
+      });
+    };
+    updateMe();
+    $rootScope.$on('$stateChangeStart', function(event, next, prev) {
+      updateMe();
     });
     $scope.data = {
-      navIndex: 3
+      navIndex: 3,
+      notificationCount: 0
     };
+    socket.socket.on('notification', function(notification) {
+      if (_.include(notification.targets, $scope.me._id) && !$location.path().match('/chat/'+notification.id) ) {
+        $scope.data.notificationCount += 1;
+        $mdToast.show($mdToast.simple().content(notification.msg));
+      }
+    });
     $rootScope.data = $scope.data;
     $('body').on('click', 'md-tab', function() {
       var i = $scope.data.navIndex;
+      if (i === 1) {
+        $scope.data.notificationCount = 0;
+      }
       $location.path($('md-tab').eq(i).attr('ng-href'));
     });
   });
