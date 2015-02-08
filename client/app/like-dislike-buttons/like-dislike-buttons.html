@@ -1,0 +1,15 @@
+
+
+        <div class="match-button-wrapper align-center">
+          <md-button ng-click="dislike(user)" class="md-fab trash-button pull-left" aria-label="Trash">
+            <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
+          </md-button>
+
+          <a ng-href="/details/{{user._id}}" class="info-button" aria-label="Like">
+            <p>info</p>
+          </a>
+
+          <md-button ng-click="like(user)" class="pull-right md-fab" aria-label="Like">
+            <md-icon icon="/assets/images/check.png" style="width: 24px; height: 24px;"></md-icon>
+          </md-button>
+        </div>

@@ -22,17 +22,7 @@
                   <span ng-href="/details/{{like._id}}" class="match-name">{{like.name}}</span>
                   <span class="pull-right match-pricerange">Price Range: $ {{like.priceRange[0]}} - {{like.priceRange[1]}}</span>
                   <br><br>
-                  <div class="match-button-wrapper">
-                    <md-button ng-click="dislike(like)" class="md-fab trash-button" aria-label="Trash">
-                      <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
-                    </md-button>
-                    <a ng-href="/details/{{item._id}}" class="info-button" aria-label="Like">
-                      <p>info</p>
-                    </a>
-                    <md-button ng-click="stilllike(like)" class="pull-right md-fab" aria-label="Like">
-                      <md-icon icon="/assets/images/check.png" style="width: 24px; height: 24px;"></md-icon>
-                    </md-button>
-                  </div>
+                  <div like-dislike-buttons user="like"></div>
                 </md-card-content>
               </md-card>
             </md-content>

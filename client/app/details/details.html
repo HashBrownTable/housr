@@ -13,7 +13,7 @@
 		<h3>Roommate Preferences</h3>
     <p>
       {{user.gender}} <span ng-show="user.preferedGender"> looking for {{user.preferedGender}} roommates</span>.
-      {{user.age}} years old <span ng-show="user.ageRange[0] || user.ageRange[1]"> looking for {{user.ageRange[0]}} - {{user.ageRange[1]}}</span>.</p>
+      {{user.age}} years old <span ng-show="user.ageRange[0] || user.ageRange[1]"> looking for roommates between {{user.ageRange[0]}} and {{user.ageRange[1]}} years old</span>.</p>
     </p>
 
 
@@ -25,6 +25,8 @@
 		<ul ng-repeat="x in Roommates">
 			<p>{{x}}<p>
 		</ul>
+
+    <div like-dislike-buttons user="user"></div>
 
 	  </md-card-content>
 
