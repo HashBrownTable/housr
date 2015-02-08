@@ -17,11 +17,10 @@ exports.register = function(socket) {
     onRemove(socket, doc);
   });
   socket.on('match:message', function(a) {
-    Match.findByIdAndUpdate(a.id,
-      {$push: {"messages": a.message}},
-      {safe: true},
-      function(err, model) {
-      });
+    Match.findById(a.id, function(err, chat) {
+      chat.messages.push(a.message);
+      chat.save();
+    });
   });
 };
 

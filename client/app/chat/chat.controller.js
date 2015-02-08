@@ -12,9 +12,16 @@ angular.module('housrApp')
           });
         });
         $scope.messages = chat.messages;
-        socket.syncUpdates('match:'+chatId, $scope.messages, function(event, item, array) {
-          console.log(event, item, array);
-          $scope.messages = array;
+        $scope.scrollBottom = function() {
+          _.defer(function() {
+            $('md-list.scroll')[0].scrollTop = 10000000000;
+          });
+        };
+        $scope.scrollBottom();
+        socket.socket.on('match:'+chatId+':save', function(messages) {
+          $scope.messages = messages;
+          $scope.scrollBottom();
+          $scope.$digest();
         });
         $scope.send = function() {
           if ($scope.message.length > 0) {
@@ -30,9 +37,7 @@ angular.module('housrApp')
               message: msg,
             });
             $scope.message = '';
-            _.defer(function() {
-              $('md-list.scroll')[0].scrollTop = 10000000000;
-            });
+            $scope.scrollBottom();
           }
         }
       });
