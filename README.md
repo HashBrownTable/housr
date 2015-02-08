@@ -23,10 +23,9 @@ To address the barrier in communication and facilitate micro conversations, we h
 ## Screenshots
 
 ![Login Page](https://raw.githubusercontent.com/HashBrownTable/housr/master/etc/pic1.png "Housr Login")
-
+![Menu](https://raw.githubusercontent.com/HashBrownTable/housr/master/etc/pic4.png "Housr Potential Roommate Matches")
 ![Matches](https://raw.githubusercontent.com/HashBrownTable/housr/master/etc/pic3.png "Housr Chat Page")
 
-![Menu](https://raw.githubusercontent.com/HashBrownTable/housr/master/etc/pic4.png "Housr Potential Roommate Matches")
 
 
 
