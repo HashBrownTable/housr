@@ -18,6 +18,7 @@ exports.register = function(socket) {
   });
   socket.on('match:message', function(a) {
     Match.findById(a.id, function(err, chat) {
+      chat.lastChanged = new Date();
       chat.messages.push(a.message);
       chat.save();
     });

@@ -1,12 +1,14 @@
 <md-list flex class="scroll">
-  <h3>Conversation</h3>
+  <h3>Conversation between {{people}}</h3>
   <md-item ng-repeat="item in messages">
     <md-item-content>
       <div class="md-tile-left">
-        <img ng-src="{{item.face}}" class="face" alt="{{item.who}}">
+        <a ng-href="/details/{{item.id}}">
+          <img ng-src="{{userDetails[item.id].picture || 'http://lorempixel.com/50/50/abstract/'+userDetails[item.id].name}}" class="face" alt="{{userDetails[item.id].name}}">
+        </a>
       </div>
       <div class="md-tile-content">
-        <h4>{{item.who}}</h4>
+        <h4><a ng-href="/details/{{item.id}}">{{userDetails[item.id].name}}</a> - {{moment(item.date).fromNow()}}</h4>
         <p>
           {{item.text}}
         </p>

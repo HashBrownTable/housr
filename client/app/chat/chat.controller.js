@@ -3,14 +3,16 @@
 angular.module('housrApp')
   .controller('ChatCtrl', function ($scope, $rootScope, User, $stateParams, Chats, socket) {
     var chatId = $stateParams.id;
-    var userDetails = {};
+    $scope.userDetails = {};
     User.get(function(user) {
       Chats.get({id: chatId}, function(chat) {
-        _.each(chat.users, function(e) {
+        _.each(chat.people, function(e) {
           User.get({id: e}, function(userDet) {
-            userDetails[e] = userDet;
+            $scope.userDetails[e] = userDet;
+            $scope.people = _.pluck(_.values($scope.userDetails), 'name').join(' and ');
           });
         });
+        $scope.moment = moment;
         $scope.messages = chat.messages;
         $scope.scrollBottom = function() {
           _.defer(function() {
@@ -26,8 +28,7 @@ angular.module('housrApp')
         $scope.send = function() {
           if ($scope.message.length > 0) {
             var msg = {
-              face: 'http://placekitten.com/g/50/50',
-              who: user.name,
+              id: user._id,
               text: $scope.message,
               date: new Date(),
             }
