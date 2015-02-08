@@ -5,17 +5,22 @@
                 <md-card>
 
                     <img src="{{item.picture || 'http://lorempixel.com/500/240/abstract/'+item.name}}" alt="Washed Out">
-                    <md-card-content >
+                    <md-card-content>
 <!--                         <h2>{{item.what}}</h2> -->
-                        <span class="match-name">{{item.name}}</span>
+                        <span ng-href="/details/{{item._id}}" class="match-name">{{item.name}}</span>
 <!--                         <h4>Age: {{item.age}}</h4> -->
-                        <span class="pull-right match-pricerange">Price Range: {{item}}</span>
+                        <span class="pull-right match-pricerange">Price Range: $ {{item.priceRange[0]}} - {{item.priceRange[1]}}</span>
                         <br><br>
 <!--                         <h4>Gender Preference: {{item.gender_pref}}</h4>
                         <h4>Preferred number of roommates: {{item.num_roommates}}</h4>
                         <p>
                           {{item.notes}}
                         </p> -->
+                        <!-- </br> -->
+                        <md-button ng-href="/details/{{item._id}}" aria-label="View">
+                            read bio 
+                        </br></br>
+                        </md-button>
 
                         <div class="match-button-wrapper">
                           <md-button ng-click="dislike(item)" class="md-fab trash-button" aria-label="Trash">
