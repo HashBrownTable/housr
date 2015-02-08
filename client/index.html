@@ -36,8 +36,8 @@
       <md-list flex>
         <md-item>
           <md-item-content>
-            <md-button ng-href="/pref">
-              Preferences
+            <md-button ng-href="/details/me">
+              View Profile
             </md-button>
           </md-item-content>
         </md-item>
@@ -52,6 +52,13 @@
           <md-item-content>
             <md-button ng-href="/dislike">
               Dislikes
+            </md-button>
+          </md-item-content>
+        </md-item>
+        <md-item>
+          <md-item-content>
+            <md-button ng-href="/pref">
+              Preferences
             </md-button>
           </md-item-content>
         </md-item>
@@ -79,7 +86,7 @@
 </md-tabs>
 
         <div class="header-profile">
-          <a class="name" href="/prefs" hide-sm>{{me.name}}</a>
+          <a class="name" href="/pref" hide-sm>{{me.name}}</a>
           <img src="/assets/images/profile-placeholder.png">
         </div>
 
