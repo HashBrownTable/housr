@@ -12,13 +12,13 @@
 
 		<h3>Roommate Preferences</h3>
     <p>
-      {{user.gender}}<span ng-show="user.preferedGender"> looking for {{user.preferedGender}} roommates</span>.
-      {{user.age}} years old<span ng-show="user.ageRange[0] || user.ageRange[1]"> looking for {{user.ageRange[0]}} - {{user.ageRange[1]}}</span>.</p>
+      {{user.gender}} <span ng-show="user.preferedGender"> looking for {{user.preferedGender}} roommates</span>.
+      {{user.age}} years old <span ng-show="user.ageRange[0] || user.ageRange[1]"> looking for {{user.ageRange[0]}} - {{user.ageRange[1]}}</span>.</p>
     </p>
 
 
 		<h3 >Rental Details</h3>
-    <p>Looking to rent<span ng-show="user.priceRange[0] && user.priceRange[1]"> for ${{user.priceRange[0]}} - {{user.priceRange[1]}}</span><span ng-show="user.preferedLocation"> in <a ng-href="https://www.google.com/maps?q={{user.preferedLocation}}">{{user.preferedLocation}}</a></span>.</p>
+    <p>Looking to rent <span ng-show="user.priceRange[0] && user.priceRange[1]"> for ${{user.priceRange[0]}} - {{user.priceRange[1]}}</span> <span ng-show="user.preferedLocation"> in <a ng-href="https://www.google.com/maps?q={{user.preferedLocation}}">{{user.preferedLocation}}</a></span>.</p>
 
 
 		<h3>Potential Roommates</h3>
