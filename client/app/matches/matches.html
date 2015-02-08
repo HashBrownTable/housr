@@ -1,9 +1,7 @@
-<div layout="row" layout-align="center center" flex ng-if="matches.length === 0">
-  <h3>No more matches found!</h3>
-</div>
+
 <div layout="row" layout-align="center">
 <div flex="55">
-  <md-card class="matches-nav" ng-if="matches.length > 0">
+  <md-card class="matches-nav">
     <ul>
       <li class="{{matchesNav==='matches' ? 'active' : '' }}"><a href="/matches">Your <span class="num">{{matches.length}}</span> Matches</a></li>
       <li class="{{matchesNav==='like' ? 'active' : '' }}"><a href="/like">Your <span class="num">{{numLikes}}</span> Likes</a></li>
@@ -28,6 +26,9 @@
     </md-item>
   </md-list>
 </div>
+</div>
+<div layout="row" layout-align="center center" flex ng-if="matches.length === 0">
+  <h3>No more matches found!</h3>
 </div>
 
   <!-- <md-content>

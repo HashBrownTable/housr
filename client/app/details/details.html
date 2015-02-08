@@ -3,7 +3,7 @@
 <div layout="row" layout-align="center">
   <div flex="55">
 	<md-card>
-		<div style="background: url('{{user.picture || 'http://lorempixel.com/640/300/people/'+user.name}}'); width: 100%; padding-top: 50%; background-size: cover;"></div>
+		<div style="background-image: url('{{user.picture || 'http://lorempixel.com/640/300/people/'+user.name}}');" class="match-hero"></div>
     <md-card-content>
     <h1>{{user.name}}</h1>
     <small class="pull-right">Last seen {{moment(user.lastOnline).fromNow()}}.</small>

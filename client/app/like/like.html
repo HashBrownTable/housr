@@ -7,8 +7,6 @@
         <li class="{{matchesNav==='dislike' ? 'active' : '' }}"><a href="/dislike">Your <span class="num">{{numDislikes}}</span> Dislike{{numDislikes>1 ? 's' : ''}}</a></li>
       </ul>
     </md-card>
-
-
     <md-list>
         <md-item ng-repeat="like in likePeople">
             <md-content>
@@ -27,5 +25,5 @@
   </div>
 </div>
 <div layout="row" layout-align="center center" flex ng-if="likePeople.length === 0">
-  <h3>No more matches found!</h3>
+  <h3>No opinions found!</h3>
 </div>
