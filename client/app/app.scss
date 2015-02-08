@@ -20,6 +20,10 @@ body {
     padding: 0.2em 0;
 }
 
+.md-large {
+  display: inline-block;
+}
+
 
 /* button class */
 .btn{
@@ -159,6 +163,10 @@ md-toolbar {
     .container {
         max-width: 730px;
     }
+}
+
+.hide md-tabs-ink-bar {
+  display: none;
 }
 
 // Component styles are injected through grunt

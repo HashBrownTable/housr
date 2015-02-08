@@ -1,4 +1,20 @@
-    <div id="map" style="height:200px"></div>
-    <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
-         <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
-    </div>
+<h3>
+  Find Relevant Housing
+</h3>
+<p>
+  Once you've found a roommate you can use the following links to find apartments and houses based on your existing preferences.
+</p>
+
+<md-button class="md-raised md-large" ng-href="http://www.zillow.com/homes/for_rent/{{location}}/{{beds}}-_beds/{{rangeLower}}-{{rangeHigher}}_mp/">
+  <img src="http://www.zillow.com/widgets/GetVersionedResource.htm?path=/static/logos/Zillowlogo_200x50.gif" width="200" height="60" alt="Zillow Real Estate Search" />
+</md-button>
+<br>
+<md-button class="md-raised md-large" ng-href="https://www.airbnb.com/s/{{location}}?guests={{beds}}&price_min={{rangeLower}}&price_max={{rangeHigher}}">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/2000px-Airbnb_Logo_B%C3%A9lo.svg.png" height="60" alt="airbnb" />
+</md-button>
+<br>
+<md-button class="md-raised md-large" ng-href="http://www.trulia.com/for_rent/{{location}}/{{beds}}p_beds/{{rangeLower}}-{{rangeHigher}}_price/">
+  <img src="http://dsmhomesales.com/wp-content/uploads/2014/02/trulia-png.png" height="60" alt="Trulia" />
+</md-button>
+
+  <!-- <div id="map" flex style="height:200px"></div> -->

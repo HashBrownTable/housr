@@ -87,7 +87,8 @@ angular.module('housrApp').controller('NavCtrl', function ($scope, $rootScope, $
     if ($location.path().match('/landlords')) {
       $scope.data.navIndex = 2;
     }
-    $scope.$watch('data.navIndex', function(i) {
+    $('body').on('click', 'md-tab', function() {
+      var i = $scope.data.navIndex;
       $location.path($('md-tab').eq(i).attr('ng-href'));
     });
   });
