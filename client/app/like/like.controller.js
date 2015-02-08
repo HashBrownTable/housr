@@ -3,10 +3,35 @@ angular.module('housrApp')
   .controller('LikeCtrl', function ($scope, LikeDislike, User, $location) {
     $scope.message = 'Hello';
     $scope.likes = [];
-
     $scope.likePeople= [];
-    //$scope.dislikePeople = [];
+
+    $scope.dislike = function(item){
+      var isLike = $location.path() === '/like'
+
+        if(item){
+          if(item.type == "dislike" && !isLike){
+              console.log(item);
+          }else{
+              item.type = "dislike";
+          }
+          alert("dislike");
+        }
+    };
     
+    $scope.stilllike = function(item){
+
+    var isLike = $location.path() === '/like'
+
+        if(item){
+          if(item.type == "like" && isLike){
+              console.log(item);
+          }else{
+              item.type = "dislike";
+          }
+          alert("like");
+        }
+    };
+
     function populate(people, i){
         User.get({id: people.targetId}, function(userData){
           if(userData)
