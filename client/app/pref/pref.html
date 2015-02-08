@@ -26,19 +26,23 @@ Please indicate your preferences for your ideal roomate!
      	<div layout layout-sm="column">
 	        <md-input-container>
 	          <label>Min Price</label>
-	          <input ng-model="user.minPrice" placeholder="ex. 0">
+	          <input ng-model="user.priceRange[0]" placeholder="ex. 0">
 	        </md-input-container>
 	        <md-input-container>
 	          <label>Max Price</label>
-	          <input ng-model="user.manPrice" placeholder="ex. 5000">
+	          <input ng-model="user.priceRange[1]" placeholder="ex. 5000">
 	        </md-input-container>
 	        <md-input-container>
 	          <label>Roomates looking for</label>
 	          <input ng-model="user.preferedNumber" placeholder="ex. 1">
 	        </md-input-container>
 	        <md-input-container>
-	          <label>Age Prefered</label>
-	          <input ng-model="user.age" placeholder="ex. 30">
+	          <label>Age Prefered-Low</label>
+	          <input ng-model="user.ageRange[0]" placeholder="ex. 19">
+	        </md-input-container>
+	        <md-input-container>
+	          <label>Age Prefered-High</label>
+	          <input ng-model="user.ageRange[1]" placeholder="ex. 30">
 	        </md-input-container>
 	      </div>
 
