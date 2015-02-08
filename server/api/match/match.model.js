@@ -5,7 +5,8 @@ var mongoose = require('mongoose'),
 
 var MatchSchema = new Schema({
   people: [],
-  messages: []
+  messages: [],
+  lastChanged: Date
 });
 
 module.exports = mongoose.model('Match', MatchSchema);

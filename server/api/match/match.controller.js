@@ -6,7 +6,7 @@ var Match = require('./match.model');
 // Get list of matchs
 exports.index = function(req, res) {
   var userId = req.user._id;
-  Match.find({people: {$in: [userId]}}, function (err, matchs) {
+  Match.find({$query:{people: userId.toString()},$orderby: {lastChanged: -1}}, function (err, matchs) {
     if(err) { return handleError(res, err); }
     return res.json(200, {chats: matchs});
   });

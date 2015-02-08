@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('housrApp')
-  .controller('MatchesCtrl', function ($scope, User, LikeDislike) {
+  .controller('MatchesCtrl', function ($scope, User, LikeDislike, $mdToast) {
     User.matches(function(matches) {
       $scope.matches = matches;
     });
@@ -16,6 +16,10 @@ angular.module('housrApp')
       LikeDislike.save({
         targetId: user._id,
         type: 'like',
+      }, function(data) {
+        if (data.msg) {
+          $mdToast.show($mdToast.simple().content(data.msg));
+        }
       });
 
       $scope.hide(user);

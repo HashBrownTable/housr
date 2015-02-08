@@ -5,5 +5,6 @@ angular.module('housrApp')
     $scope.message = 'Hello';
     Chats.get(function(data) {
       $scope.chats = data.chats;
+      console.log($scope.chats);
     });
   });
