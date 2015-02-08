@@ -82,6 +82,17 @@ body {
   margin-top: 0.6em;
   margin-left: auto;
   margin-right: auto;
+  img{
+    width: 100%;
+  }
+}
+
+#close-sidenav{
+  position: absolute;
+  right: 0;
+  top: 0.75em;
+  width: auto;
+  font-size: 0.8em;
 }
 
 .nav-hamburger{
