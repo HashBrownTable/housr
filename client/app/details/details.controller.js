@@ -6,9 +6,10 @@ angular.module('housrApp')
     $scope.user = {
       name: 'Loading...'
     };
+    $scope.moment = moment;
 
     $scope.Likes = [];
-    $scope.Roomates = [];
+    $scope.Roommates = [];
 
     LikeDislike.get(function(data) {
     		$scope.Likes = data;
@@ -19,8 +20,8 @@ angular.module('housrApp')
     			User.get({id: Likes.targetId},function(x) {
     				$scope.Likes[i].userData = x;
     				$scope.Likes[i].name = x.name;
-    				$scope.Roomates.push(x.name);
-            $scope.Roomates = _.uniq($scope.Roomates);
+    				$scope.Roommates.push(x.name);
+            $scope.Roommates = _.uniq($scope.Roommates);
     				//console.log(x.name);
     				//console.log("scopeLikes1");
     				//console.log($scope.Likes);
@@ -28,7 +29,7 @@ angular.module('housrApp')
     		});
 
     	//console.log("scopeLikes2");
-    	//console.log($scope.Roomates);
+    	//console.log($scope.Roommates);
     });
 
 
