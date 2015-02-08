@@ -8,9 +8,9 @@ angular.module('housrApp', [
   'ui.router',
   'ngAnimate',
   'ngAria',
-  'ngMaterial',
+  'ngMaterial'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
     $urlRouterProvider
       .otherwise('/');
 
@@ -21,10 +21,10 @@ angular.module('housrApp', [
       .accentPalette('pink');
 
   })
-  .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
+  .factory('authInterceptor', function($rootScope, $q, $cookieStore, $location) {
     return {
       // Add authorization token to headers
-      request: function (config) {
+      request: function(config) {
         config.headers = config.headers || {};
         if ($cookieStore.get('token')) {
           config.headers.Authorization = 'Bearer ' + $cookieStore.get('token');
@@ -34,7 +34,7 @@ angular.module('housrApp', [
 
       // Intercept 401s and redirect you to login
       responseError: function(response) {
-        if(response.status === 401) {
+        if (response.status === 401) {
           $location.path('/login');
           // remove any stale tokens
           $cookieStore.remove('token');
@@ -47,9 +47,9 @@ angular.module('housrApp', [
     };
   })
 
-  .run(function ($rootScope, $location, Auth) {
+  .run(function($rootScope, $location, Auth) {
     // Redirect to login if route requires auth and you're not logged in
-    $rootScope.$on('$stateChangeStart', function (event, next) {
+    $rootScope.$on('$stateChangeStart', function(event, next) {
       Auth.isLoggedInAsync(function(loggedIn) {
         if (next.authenticate && !loggedIn) {
           $location.path('/login');
@@ -57,7 +57,7 @@ angular.module('housrApp', [
       });
       console.log(next.url);
       $rootScope.showNav = true;
-      if((next.url === '/login')||(next.url === '/signup')){
+      if ((next.url === '/login') || (next.url === '/signup')) {
         console.log('showNav');
         $rootScope.showNav = false;
       }
@@ -73,15 +73,15 @@ angular.module('housrApp', [
     });
   });
 
-angular.module('housrApp').controller('NavCtrl', function ($scope, $rootScope, $mdSidenav, User, $location) {
-    User.get(function(data){
+angular.module('housrApp').controller('NavCtrl', function($scope, $rootScope, $mdSidenav, User, $location) {
+    User.get(function(data) {
 
       console.log(data);
       $scope.me = {
         name: data.name
       };
 
-      $scope.toggleLeft = function(){
+      $scope.toggleLeft = function() {
         console.log('sidenav toggle');
         $mdSidenav('left').toggle();
       };
@@ -97,8 +97,8 @@ angular.module('housrApp').controller('NavCtrl', function ($scope, $rootScope, $
     });
   });
 
-angular.module('housrApp').controller('SidenavCtrl', function ($scope, $rootScope, $mdSidenav) {
-    $scope.close = function(){
+angular.module('housrApp').controller('SidenavCtrl', function($scope, $rootScope, $mdSidenav) {
+    $scope.close = function() {
       console.log('sidenav toggle within sidenav');
       $mdSidenav('left').close();
     };

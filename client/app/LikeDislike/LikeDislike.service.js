@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('housrApp')
-  .factory('LikeDislike', function ($resource) {
+  .factory('LikeDislike', function($resource) {
     return $resource('/api/likedislikes/:id/:controller', {
       id: '@_id'
     },
@@ -9,16 +9,16 @@ angular.module('housrApp')
       save: {
         method: 'POST',
         params: {
-          controller:'',
+          controller: '',
           id: ''
         }
       },
       get: {
         method: 'GET',
         params: {
-          id:''
+          id: ''
         },
         isArray: true
-      },
+      }
 	  });
   });

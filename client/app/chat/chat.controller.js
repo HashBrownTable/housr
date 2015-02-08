@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('housrApp')
-  .controller('ChatCtrl', function ($scope, $rootScope, User, $stateParams, Chats, socket) {
+  .controller('ChatCtrl', function($scope, $rootScope, User, $stateParams, Chats, socket) {
     var chatId = $stateParams.id;
     $scope.userDetails = {};
     User.get(function(user) {
@@ -20,7 +20,7 @@ angular.module('housrApp')
             $scope.scrollBottom();
           });
         }, 500);
-        $scope.$on("$destroy", function(){
+        $scope.$on('$destroy', function() {
           clearInterval(interval);
         });
         $scope.messages = chat.messages;
@@ -30,7 +30,7 @@ angular.module('housrApp')
           });
         };
         $scope.scrollBottom();
-        socket.socket.on('match:'+chatId+':save', function(messages) {
+        socket.socket.on('match:' + chatId + ':save', function(messages) {
           $scope.messages = messages;
           $scope.scrollBottom();
           $scope.$digest();
@@ -40,17 +40,17 @@ angular.module('housrApp')
             var msg = {
               id: user._id,
               text: $scope.message,
-              date: new Date(),
-            }
+              date: new Date()
+            };
             $scope.messages.push(msg);
             socket.socket.emit('match:message', {
               id: chatId,
-              message: msg,
+              message: msg
             });
             $scope.message = '';
             $scope.scrollBottom();
           }
-        }
+        };
       });
     });
   });
