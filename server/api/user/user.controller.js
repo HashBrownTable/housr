@@ -11,6 +11,8 @@ var validationError = function(res, err) {
   return res.json(422, err);
 };
 
+var protectedFields = '-salt -hashedPassword -email -provider'
+
 /**
  * Get list of users
  * restriction: 'admin'
@@ -27,7 +29,7 @@ exports.index = function(req, res) {
  */
 exports.matches = function(req, res) {
   var userId = req.user._id.toString();
-  User.find({$query: {}, $orderby: {lastOnline: -1}}, '-salt -hashedPassword -email', function (err, users) {
+  User.find({$query: {}, $orderby: {lastOnline: -1}}, protectedFields, function (err, users) {
     if(err) return res.send(500, err);
     LikeDislike.find({ownerId: req.user._id}, function(err, opinioned) {
       if(err) return res.send(500, err);
@@ -61,7 +63,7 @@ exports.create = function (req, res, next) {
 exports.show = function (req, res, next) {
   var userId = req.params.id;
 
-  User.findById(userId, '-salt -hashedPassword -email', function (err, user) {
+  User.findById(userId, protectedFields, function (err, user) {
     if (err) return next(err);
     if (!user) return res.send(401);
     res.json(user);

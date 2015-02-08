@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Likedislike = require('./likedislike.model');
+var Chat = require('../match/match.model');
 
 // Get list of likedislikes
 exports.index = function(req, res) {
@@ -26,7 +27,15 @@ exports.create = function(req, res) {
   console.log(toCreate);
   Likedislike.create(toCreate, function(err, likedislike) {
     if(err) { return handleError(res, err); }
-    return res.json(201, likedislike);
+    Likedislike.findOne({ownerId: req.body.targetId, targetId: req.user._id, type: 'like'}, function(err, blah) {
+      if(err) { return handleError(res, err); }
+      if (blah) {
+        Chat.create({people: [req.body.targetId.toString(), req.user._id.toString()], messages: [], lastChanged: new Date()});
+        return res.json(201, {msg: 'You have created a new match!'});
+      } else {
+        return res.json(201, {});
+      }
+    });
   });
 };
 

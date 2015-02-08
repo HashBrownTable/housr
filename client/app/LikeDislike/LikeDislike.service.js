@@ -17,7 +17,8 @@ angular.module('housrApp')
         method: 'GET',
         params: {
           id:''
-        }
+        },
+        isArray: true
       },
 	  });
   });
