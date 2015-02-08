@@ -1,5 +1,5 @@
 <md-list>
-    <md-item ng-repeat="dislike in dislikes">
+    <md-item ng-controller="DislikeCtrl" ng-repeat="dislike in dislikes">
         <md-content>
             <div layout="row" layout-align="center">
                 <md-card>
@@ -23,7 +23,7 @@
                         </md-button>
 
                         <div class="match-button-wrapper">
-                          <md-button ng-click="dislike(item)" class="md-fab trash-button" aria-label="Dislike">
+                          <md-button ng-click="dislike()" class="md-fab trash-button" aria-label="Dislike">
                             <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
                           </md-button>
 

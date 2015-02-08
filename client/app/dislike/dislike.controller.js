@@ -2,8 +2,12 @@
 angular.module('housrApp')
   .controller('DislikeCtrl', function ($scope, LikeDislike, User) {
     $scope.message = 'Hello';
+    
     $scope.dislikes = [];
+
+
     LikeDislike.get(function(data){
+      console.log("dislike debug");
       console.log(data);
       //$scope.likes = data;
       $scope.dislikes = data;
@@ -15,6 +19,16 @@ angular.module('housrApp')
         });
       })
     });
+
+    $scope.dislike = function(){
+        alert("hi world");
+    };
+
+
+    $scope.saveStub = function() {
+      alert('Placeholder');
+    };
+
   });
 
 

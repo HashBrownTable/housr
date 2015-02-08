@@ -4,6 +4,7 @@ angular.module('housrApp')
     $scope.message = 'Hello';
     $scope.likes = [];
     LikeDislike.get(function(data){
+      console.log("like controller debug");
       console.log(data);
       //$scope.likes = data;
       $scope.likes = data;
