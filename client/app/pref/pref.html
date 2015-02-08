@@ -6,24 +6,21 @@ Please indicate your preferences for your ideal roomate!
 
 	<div>
 	 		 <md-checkbox ng-model="user.prefFemale" aria-label="Female" class="md-warn">
-	    		Female: {{ user.prefFemale }}
+	    		Female: {{user.preferedGender == "female" || user.preferedGender == "both"}}
 	 		 </md-checkbox>
 
 	 		  <md-checkbox ng-model="user.prefMale" aria-label="Male" class="md-warn">
-	    		Male: {{ user.prefMale }}
+	    		Male: {{ user.preferedGender == "male" || user.preferedGender == "both"}}
 	 		 </md-checkbox>
 
 	</div>
 
 	      <div layout layout-sm="column">
 	        <md-input-container flex>
-	          <label>First Name</label>
-	          <input ng-model="user.firstName" placeholder="John">
+	          <label>Name</label>
+	          <input ng-model="user.name" placeholder="John">
 	        </md-input-container>
-	        <md-input-container flex>
-	          <label>Last Name</label>
-	          <input ng-model="user.lastName" placeholder="Apple">
-	        </md-input-container>
+	        
 	      </div>
 
      	<div layout layout-sm="column">
@@ -37,11 +34,11 @@ Please indicate your preferences for your ideal roomate!
 	        </md-input-container>
 	        <md-input-container flex>
 	          <label>Roomates looking for</label>
-	          <input ng-model="user.roomates" placeholder="ex. 5000">
+	          <input ng-model="user.preferedNumber" placeholder="ex. 1">
 	        </md-input-container>
 	        <md-input-container flex>
 	          <label>Age Prefered</label>
-	          <input ng-model="user.agePref" placeholder="ex. 5000">
+	          <input ng-model="user.age" placeholder="ex. 5000">
 	        </md-input-container>
 	      </div>
 

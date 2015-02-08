@@ -26,8 +26,8 @@ angular.module('housrApp')
     }
 
     $scope.save = function(){
-    	var toLog = "Hello world";
 
+      alert("Thanks");
     	var firstName = $scope.user.firstName;
       var lastName = $scope.user.lastName;
 
@@ -54,13 +54,13 @@ angular.module('housrApp')
 	    };
 
 
-      console.log(firstName);
-      console.log(lastName);
-      console.log(priceRange);
-      console.log(ageRange);
-      console.log(preferedNumber);
-      console.log(preferedLocation);
-      console.log(preferedGender);
+      // console.log(firstName);
+      // console.log(lastName);
+      // console.log(priceRange);
+      // console.log(ageRange);
+      // console.log(preferedNumber);
+      // console.log(preferedLocation);
+      // console.log(preferedGender);
 
       // var params = {
       // 	firstName,
