@@ -24,6 +24,10 @@ angular.module('housrApp')
         alert('hi world');
     };
 
+    $scope.like = function(){
+        alert("hi world");
+    };
+
 
     $scope.saveStub = function() {
       alert('Placeholder');
