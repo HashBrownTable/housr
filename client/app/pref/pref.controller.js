@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('housrApp')
-  .controller('PrefCtrl', function ($scope, User, $location) {
+  .controller('PrefCtrl', function($scope, User, $location) {
     //$scope.message = 'Hello';
 
 
@@ -20,46 +20,30 @@ angular.module('housrApp')
       }
     });
 
-    $scope.check = function(){
-
-      console.log("check called");
-
+    $scope.check = function() {
+      console.log('check called');
        User.get(function(data) {
-            //debugger;
-            alert(data.user);
-            //document.write(data);
+          //debugger;
+          //alert(data.user);
+          //document.write(data);
        });
-    }
+    };
 
-    $scope.save = function(){
+    $scope.save = function() {
 
-      //Just added these for debugging
-    	var firstName = $scope.user.firstName;
-      var lastName = $scope.user.lastName;
-	    var priceRange = [$scope.user.minPrice,$scope.user.maxPrice];
-	    var ageRange = [$scope.user.agePref];
-	    var preferedNumber = $scope.user.preferedNumber;
-	    var preferedLocation = $scope.user.preferedLocation;
-	    var preferedGender = "both";
+	    var preferedGender = 'both';
 
-
-	    if($scope.user.prefFemale == true)
-	    {
-			   preferedGender = "female";
-	    }
-	    	else if ($scope.user.prefMale == true)
-      {
-	    	 preferedGender = "male";
+	    if ($scope.user.prefFemale) {
+			   preferedGender = 'female';
+	    } else if ($scope.user.prefMale) {
+	    	 preferedGender = 'male';
 	    }
 
 
       var both = $scope.user.prefFemale && $scope.user.prefMale;
-	    if (both || !both)
-	    {
-	    	preferedGender = "both";
-	    };
-
-
+	    if (both || !both) {
+	    	preferedGender = 'both';
+	    }
 
       $scope.user.preferedGender = preferedGender;
       User.savePrefs($scope.user, function() {

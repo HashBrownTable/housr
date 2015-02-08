@@ -1,22 +1,22 @@
 'use strict';
 
 angular.module('housrApp')
-  .controller('DetailsCtrl', function ($scope, User, LikeDislike, $stateParams) {
+  .controller('DetailsCtrl', function($scope, User, LikeDislike, $stateParams) {
     $scope.message = 'Hello';
     $scope.user = {
-      name: 'Loading...',
-    }
+      name: 'Loading...'
+    };
 
     $scope.Likes = [];
     $scope.Roomates = [];
 
-    LikeDislike.get(function(data){
+    LikeDislike.get(function(data) {
     		$scope.Likes = data;
 
     		_.filter(data, function(i) {
           return i.type == 'like';
-        }).forEach(function(Likes,i){
-    			User.get({id: Likes.targetId},function(x){
+        }).forEach(function(Likes, i) {
+    			User.get({id: Likes.targetId},function(x) {
     				$scope.Likes[i].userData = x;
     				$scope.Likes[i].name = x.name;
     				$scope.Roomates.push(x.name);
