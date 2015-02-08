@@ -3,15 +3,15 @@
 
 <md-content ng-controller="DetailsCtrl">
 	<md-card>
-		<img src="{{item.picture || 'http://lorempixel.com/500/240/abstract/'+item.name}}" alt="Washed Out">
-	
+		<img src="{{item.picture || 'http://lorempixel.com/500/240/abstract/'+item.name}}">
+
       <md-card-content>
 
-      
+
 		<h1>{{user.name}}</h1>
 		<h3>About</h3>
 		<p>{{user.description}}</p>
-		
+
 		<h3 ng-show="user.email">Email</h3>
 		<p>{{user.email}}</p>
 
