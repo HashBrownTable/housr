@@ -52,22 +52,29 @@ body {
   text-decoration: none;
   white-space: normal;
   width: 100%;
+  margin-top: 0.5em;
 }
 
 /*global layout elements */
 
 .header-nav{
   float: left;
-  width: 50%;
+
+  .md-button{
+    display: inline-block;
+  }
 }
 
 .header-profile{
-  float: right;
-  width: 50%;
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+
   img{
     width: 2em;
     float: right;
   }
+
   .name{
     display: inline-block;
     font-size: 0.8em;
@@ -82,6 +89,17 @@ body {
   margin-top: 0.6em;
   margin-left: auto;
   margin-right: auto;
+  img{
+    width: 100%;
+  }
+}
+
+#close-sidenav{
+  position: absolute;
+  right: 0;
+  top: 0.75em;
+  width: auto;
+  font-size: 0.8em;
 }
 
 .nav-hamburger{
@@ -105,11 +123,11 @@ body {
 
 // Component styles are injected through grunt
 // injector
+@import 'Chats/chats.scss';
 @import 'account/login/login.scss';
 @import 'account/logout/logout.scss';
 @import 'admin/admin.scss';
 @import 'chat/chat.scss';
-@import 'chats/chats.scss';
 @import 'details/details.scss';
 @import 'maps/maps.scss';
 @import 'matches/matches.scss';

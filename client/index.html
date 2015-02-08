@@ -28,18 +28,12 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" md-component-id="left" ng-if="showNav" md-is-locked-open="$media('gt-sm')">
-      <md-toolbar>
-        <img class="logo" src="/assets/images/logo.png">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" md-component-id="left" ng-if="showNav">
+      <md-toolbar ng-controller="SidenavCtrl" >
+        <a ng-href="/" ng-click="close()" class="logo"><img src="/assets/images/logo.png"></a>
+<!--         <md-button id="close-sidenav" ng-click="close()">close</md-button> -->
       </md-toolbar>
       <md-list>
-        <md-item>
-          <md-item-content>
-            <md-button ng-href="/">
-              Home
-            </md-button>
-          </md-item-content>
-        </md-item>
         <md-item>
           <md-item-content>
             <md-button ng-href="/pref">
@@ -56,7 +50,7 @@
         </md-item>
         <md-item>
           <md-item-content>
-            <md-button ng-href="/details/54d674518cf69160504a8980">
+            <md-button ng-href="/details/54d6b4a4e9080cfe838b11b3">
               details for debug
             </md-button>
           </md-item-content>
@@ -67,23 +61,21 @@
     <div layout="column" flex class="content-wrapper" id="content" ng-controller="NavCtrl">
       <md-toolbar md-scroll-shrink ng-if="showNav">
         <div class="md-toolbar-tools">
-          <svg class="nav-hamburger" xmlns="http://www.w3.org/2000/svg" width="30px" height="50%" style="margin-top: 4px;" viewBox="0 0 48 48"><path color="white" d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"/></svg>
+          <md-button ng-click="toggleLeft()"><svg class="nav-hamburger" xmlns="http://www.w3.org/2000/svg" width="30px" height="50%" viewBox="0 0 48 48"><path color="white" d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"/></svg></md-button>
           <div class="header-nav">
             <md-button ng-href="/matches">
               Matches
             </md-button>
-            &nbsp;&nbsp;
             <md-button ng-href="/chats">
               Chats
             </md-button>
-            &nbsp;&nbsp;
             <md-button ng-href="/landlords">
               Rentals
             </md-button>
         </div>
 
         <div class="header-profile">
-          <a class="name" href="/prefs">{{me.name}}</a>
+          <a class="name" href="/prefs" hide-sm>{{me.name}}</a>
           <img src="/assets/images/profile-placeholder.png">
         </div>
 
@@ -131,6 +123,8 @@
         <script src="app/app.js"></script>
           <!-- injector:js -->
           <script src="app/Chats/Chats.service.js"></script>
+          <script src="app/Chats/chats.controller.js"></script>
+          <script src="app/Chats/chats.js"></script>
           <script src="app/LikeDislike/LikeDislike.service.js"></script>
           <script src="app/account/account.js"></script>
           <script src="app/account/login/login.controller.js"></script>
@@ -142,8 +136,6 @@
           <script src="app/admin/admin.js"></script>
           <script src="app/chat/chat.controller.js"></script>
           <script src="app/chat/chat.js"></script>
-          <script src="app/chats/chats.controller.js"></script>
-          <script src="app/chats/chats.js"></script>
           <script src="app/details/details.controller.js"></script>
           <script src="app/details/details.js"></script>
           <script src="app/maps/maps.controller.js"></script>

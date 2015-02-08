@@ -64,13 +64,25 @@ angular.module('housrApp', [
     });
   });
 
-angular.module('housrApp').controller('NavCtrl', function ($scope, $rootScope, User) {
-  User.get(function(data){
+angular.module('housrApp').controller('NavCtrl', function ($scope, $rootScope, $mdSidenav, User) {
+    User.get(function(data){
 
-    console.log(data)
-    $scope.me = {
-      name: data.name
-    }
+      console.log(data);
+      $scope.me = {
+        name: data.name
+      };
 
+      $scope.toggleLeft = function(){
+        console.log('sidenav toggle');
+        $mdSidenav('left').toggle();
+      };
+
+    });
   });
-});
+
+angular.module('housrApp').controller('SidenavCtrl', function ($scope, $rootScope, $mdSidenav) {
+    $scope.close = function(){
+      console.log('sidenav toggle within sidenav');
+      $mdSidenav('left').close();
+    };
+  });
