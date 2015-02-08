@@ -2,9 +2,12 @@
 
 <div layout-fill>
   <div layout="row" layout-align="center center">
-    <md-card class="form md-whiteframe-z3 demo-container" flex="100" flex-md="66" flex-gt-md="50">
+    <md-card class="form md-whiteframe-z3 demo-container login-container" flex="100" flex-md="66" flex-gt-md="50">
       <div class="login-hero">
-
+        <div class="overlay">
+          <img src="/assets/images/logo.png">
+          <p>Find a roommate, lower your rent.</p>
+        </div>
       </div>
       <md-card-content>
       <form name="form" ng-submit="login(form)" novalidate>
@@ -44,13 +47,13 @@
         <md-divider></md-divider>
         <br><br>
         <div class="login-buttons">
-          <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
+          <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')" flex-sm="99">
             <i class="fa fa-facebook"></i> Connect with Facebook
-          </a>
-          <a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">
+          </a>&nbsp;
+          <a class="btn btn-google-plus" href="" ng-click="loginOauth('google')" flex-sm="99">
             <i class="fa fa-google-plus"></i> Connect with Google+
-          </a>
-          <a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">
+          </a>&nbsp;
+          <a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')" flex-sm="99">
             <i class="fa fa-twitter"></i> Connect with Twitter
           </a>
         </div>

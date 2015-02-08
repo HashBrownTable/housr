@@ -9,12 +9,10 @@
         </div>
         <div class="md-tile-content">
           <h3>{{item.names}}</h3>
-          <h4>{{item.who}}</h4>
-          <p>
-            {{item.notes}}
-          </p>
-          <md-button ng-href="/chat/{{item._id}}">View Chat</md-button>
+          <p>{{item.messages[item.messages.length-1].text}}</p>
         </div>
+        <md-button class="pull-right btn" ng-href="/chat/{{item._id}}">View Chat</md-button>
       </md-item-content>
+      <md-divider ng-if="!$last"></md-divider>
     </md-item>
   </md-list>
