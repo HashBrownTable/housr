@@ -1,6 +1,7 @@
 'use strict';
 
 var User = require('./user.model');
+var LikeDislike = require('../likedislike/likedislike.model');
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
@@ -25,9 +26,18 @@ exports.index = function(req, res) {
  * Get list of user matches
  */
 exports.matches = function(req, res) {
-  User.find({}, '-salt -hashedPassword -email', function (err, users) {
+  var userId = req.user._id.toString();
+  User.find({$query: {}, $orderby: {lastOnline: -1}}, '-salt -hashedPassword -email', function (err, users) {
     if(err) return res.send(500, err);
-    res.json(200, users);
+    LikeDislike.find({ownerId: req.user._id}, function(err, opinioned) {
+      if(err) return res.send(500, err);
+      var ids = _.map(_.pluck(opinioned, 'targetId'), function(i) {
+        return i.toString();
+      });
+      res.json(200, _.filter(users, function(user) {
+        return user._id != userId && !_.include(ids, user._id.toString());
+      }));
+    });
   });
 };
 
@@ -51,25 +61,12 @@ exports.create = function (req, res, next) {
 exports.show = function (req, res, next) {
   var userId = req.params.id;
 
-  User.findById(userId, function (err, user) {
+  User.findById(userId, '-salt -hashedPassword -email', function (err, user) {
     if (err) return next(err);
     if (!user) return res.send(401);
-    res.json(user.profile);
+    res.json(user);
   });
 };
-/**
- * Get a single user
- */
-exports.show = function (req, res, next) {
-  var userId = req.params.id;
-
-  User.findById(userId, function (err, user) {
-    if (err) return next(err);
-    if (!user) return res.send(401);
-    res.json(user.profile);
-  });
-};
-
 /**
  * Deletes a user
  * restriction: 'admin'
@@ -130,6 +127,8 @@ exports.me = function(req, res, next) {
   }, '-salt -hashedPassword', function(err, user) { // don't ever give out the password or salt
     if (err) return next(err);
     if (!user) return res.json(401);
+    user.lastOnline = new Date();
+    user.save();
     res.json(user);
   });
 };

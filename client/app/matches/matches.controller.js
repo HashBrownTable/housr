@@ -21,6 +21,8 @@ angular.module('housrApp')
       $scope.hide(user);
     }
     $scope.hide = function(user) {
-      debugger;
+      $('md-card').eq(_.indexOf($scope.matches, user)).animate({
+        opacity: 0,
+      }).slideUp();
     }
   });
