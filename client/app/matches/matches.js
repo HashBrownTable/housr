@@ -6,6 +6,7 @@ angular.module('housrApp')
       .state('matches', {
         url: '/',
         templateUrl: 'app/matches/matches.html',
-        controller: 'MatchesCtrl'
+        controller: 'MatchesCtrl',
+        authenticate: true
       });
   });
