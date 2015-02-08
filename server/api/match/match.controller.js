@@ -11,7 +11,12 @@ exports.index = function(req, res) {
   var userId = req.user._id;
   Match.find({$query:{people: userId.toString()},$orderby: {lastChanged: -1}}, function (err, matchs) {
     if(err) { return handleError(res, err); }
-    return res.json(200, {chats: matchs});
+    return res.json(200, {chats: _.map(matchs, function(match) {
+      if (match.messages.length > 0) {
+        match.messages = [_.last(match.messages)];
+      }
+      return match;
+    })});
   });
 };
 

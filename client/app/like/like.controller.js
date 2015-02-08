@@ -17,7 +17,7 @@ angular.module('housrApp')
           alert("dislike");
         }
     };
-    
+
     $scope.stilllike = function(item){
 
     var isLike = $location.path() === '/like'
@@ -28,7 +28,6 @@ angular.module('housrApp')
           }else{
               item.type = "dislike";
           }
-          alert("like");
         }
     };
 
@@ -67,7 +66,7 @@ angular.module('housrApp')
       $scope.likePeople.forEach(populate);
 
       // $scope.likePeople.forEach(populate($scope.dislikePeople, 0));
-     
+
       //console.log("$scope.dislikePeople");
       //console.log($scope.dislikePeople);
       console.log("$scope.likePeople");

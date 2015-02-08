@@ -24,16 +24,21 @@ exports.show = function(req, res) {
 // Creates a new likedislike in the DB.
 exports.create = function(req, res) {
   var toCreate = {ownerId: req.user._id, targetId: req.body.targetId, type: req.body.type};
-  console.log(toCreate);
-  Likedislike.create(toCreate, function(err, likedislike) {
-    if(err) { return handleError(res, err); }
-    Likedislike.findOne({ownerId: req.body.targetId, targetId: req.user._id, type: 'like'}, function(err, blah) {
+  var oldRecord = {ownerId: req.user._id, targetId: req.body.targetId};
+  Likedislike.remove(oldRecord, function() {
+    console.log(toCreate);
+    Likedislike.create(toCreate, function(err, likedislike) {
       if(err) { return handleError(res, err); }
-      if (blah) {
-        Chat.create({people: [req.body.targetId.toString(), req.user._id.toString()], messages: [], lastChanged: new Date()});
-        return res.json(201, {msg: 'You have created a new match!'});
-      } else {
-        return res.json(201, {});
+      if (likedislike.type === 'like') {
+        Likedislike.findOne({ownerId: req.body.targetId, targetId: req.user._id, type: 'like'}, function(err, blah) {
+          if(err) { return handleError(res, err); }
+          if (blah) {
+            Chat.create({people: [req.body.targetId.toString(), req.user._id.toString()], messages: [], lastChanged: new Date()});
+            return res.json(201, {msg: 'You have created a new match!'});
+          } else {
+            return res.json(201, {});
+          }
+        });
       }
     });
   });

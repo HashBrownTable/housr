@@ -26,25 +26,4 @@ angular.module('housrApp')
 
     });
 
-    $scope.dislike = function(user) {
-      LikeDislike.save({
-        targetId: user._id,
-        type: 'dislike'
-      });
-      $scope.hide(user);
-    };
-    $scope.like = function(user) {
-      LikeDislike.save({
-        targetId: user._id,
-        type: 'like'
-      }, function(data) {
-      });
-
-      $scope.hide(user);
-    };
-    $scope.hide = function(user) {
-      $('md-card').eq(_.indexOf($scope.matches, user)).animate({
-        opacity: 0
-      }).slideUp();
-    };
   });
