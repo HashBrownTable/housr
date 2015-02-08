@@ -1,6 +1,6 @@
 
 <div layout="row" layout-align="center">
-<div flex="55">
+<div flex="55" flex-md="100" flex-sm="100">
   <md-card class="matches-nav">
     <ul>
       <li class="{{matchesNav==='matches' ? 'active' : '' }}"><a href="/matches">Your <span class="num">{{matches.length}}</span> Matches</a></li>
@@ -14,7 +14,7 @@
         <md-card class="match-item">
             <div class="match-hero" style="background-image: url('{{item.picture || 'http://lorempixel.com/640/300/people/'+item.name}}');" alt="Washed Out"></div>
             <md-card-content>
-                <span ng-href="/details/{{item._id}}" class="match-name">{{item.name}}<img ng-if="item.dependents" class="dependents" src="/assets/images/dependents.png"><small class="dependents">Dependents</small></span>
+                <span ng-href="/details/{{item._id}}" class="match-name">{{item.name}}<img ng-if="item.dependents" class="dependents" src="/assets/images/dependents.png"><small class="dependents" ng-if="item.dependents">Dependents</small></span>
                 <span class="pull-right match-pricerange">Price Range: $ {{item.priceRange[0]}} - {{item.priceRange[1]}}</span>
                 <br><br>
                 <div like-dislike-buttons user="item"></div>
