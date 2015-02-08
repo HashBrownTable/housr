@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('housrApp')
-  .controller('PrefCtrl', function ($scope, User) {
+  .controller('PrefCtrl', function ($scope, User, $location) {
     //$scope.message = 'Hello';
 
 
@@ -12,6 +12,12 @@ angular.module('housrApp')
     User.get(function(data) {
       console.log(data);
       $scope.user = data;
+      if (data.preferedGender === 'female' || data.preferedGender == 'both') {
+        $scope.user.prefFemale = true;
+      }
+      if (data.preferedGender === 'male' || data.preferedGender == 'both') {
+        $scope.user.prefMale = true;
+      }
     });
 
     $scope.check = function(){
@@ -47,7 +53,8 @@ angular.module('housrApp')
 	    }
 
 
-	    if ($scope.user.prefFemale == true && $scope.user.prefMale == true)
+      var both = $scope.user.prefFemale && $scope.user.prefMale;
+	    if (both || !both)
 	    {
 	    	preferedGender = "both";
 	    };
@@ -55,7 +62,9 @@ angular.module('housrApp')
 
 
       $scope.user.preferedGender = preferedGender;
-      User.savePrefs($scope.user);
+      User.savePrefs($scope.user, function() {
+        $location.path('/');
+      });
 
     };
 

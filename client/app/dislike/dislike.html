@@ -1,0 +1,41 @@
+<md-list>
+    <md-item ng-controller="DislikeCtrl" ng-repeat="dislike in dislikes">
+        <md-content>
+            <div layout="row" layout-align="center">
+                <md-card>
+
+                    <img src="{{dislike.picture || 'http://lorempixel.com/500/240/abstract/'+dislike.name}}" alt="Washed Out">
+                    <md-card-content>
+<!--                         <h2>{{dislike.what}}</h2> -->
+                        <span ng-href="/details/{{dislike._id}}" class="match-name">{{dislike.name}}</span>
+<!--                         <h4>Age: {{dislike.age}}</h4> -->
+                        <span class="pull-right match-pricerange">Price Range: $ {{dislike.priceRange[0]}} - {{dislike.priceRange[1]}}</span>
+                        <br><br>
+<!--                         <h4>Gender Preference: {{dislike.gender_pref}}</h4>
+                        <h4>Preferred number of roommates: {{dislike.num_roommates}}</h4>
+                        <p>
+                          {{dislike.notes}}
+                        </p> -->
+                        <!-- </br> -->
+                        <md-button ng-href="/details/{{dislike._id}}" aria-label="View">
+                            read bio
+                        </br></br>
+                        </md-button>
+
+                        <div class="match-button-wrapper">
+                          <md-button ng-click="dislike()" class="md-fab trash-button" aria-label="Dislike">
+                            <md-icon icon="/assets/images/trash.png" style="width: 24px; height: 24px;"></md-icon>
+                          </md-button>
+
+                          <md-button ng-click="like(item)" class="pull-right md-fab" aria-label="Like">
+                            <md-icon icon="/assets/images/check.png" style="width: 24px; height: 24px;"></md-icon>
+                          </md-button>
+                        </div>
+
+                    </md-card-content>
+
+                </md-card>
+            </div>
+        </md-content>
+    </md-item>
+</md-list>
