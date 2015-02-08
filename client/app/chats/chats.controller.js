@@ -22,16 +22,12 @@ angular.module('housrApp')
             if(personId!==currUserId){
               recipientUserId = personId;
               console.log(recipientUserId);
-              User.get({id: recipientUserId}, function(data){
-                console.log(data);
-                $scope.chats[i].names = data.name;
-                console.log($scope.chats);
+              User.get({id: recipientUserId}, function(userData){
+                $scope.chats[i].names = userData.name;
               });
             }
           });
         });
       });
-
     });
-
   });
