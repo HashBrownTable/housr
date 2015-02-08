@@ -1,26 +1,27 @@
 'use strict';
 
 angular.module('housrApp')
-  .controller('DetailsCtrl', function ($scope, User, LikeDislike, $stateParams) {
+  .controller('DetailsCtrl', function($scope, User, LikeDislike, $stateParams) {
     $scope.message = 'Hello';
     $scope.user = {
-      name: 'Loading...',
-    }
+      name: 'Loading...'
+    };
+    $scope.moment = moment;
 
     $scope.Likes = [];
-    $scope.Roomates = [];
+    $scope.Roommates = [];
 
-    LikeDislike.get(function(data){
+    LikeDislike.get(function(data) {
     		$scope.Likes = data;
 
     		_.filter(data, function(i) {
           return i.type == 'like';
-        }).forEach(function(Likes,i){
-    			User.get({id: Likes.targetId},function(x){
+        }).forEach(function(Likes, i) {
+    			User.get({id: Likes.targetId},function(x) {
     				$scope.Likes[i].userData = x;
     				$scope.Likes[i].name = x.name;
-    				$scope.Roomates.push(x.name);
-            $scope.Roomates = _.uniq($scope.Roomates);
+    				$scope.Roommates.push(x.name);
+            $scope.Roommates = _.uniq($scope.Roommates);
     				//console.log(x.name);
     				//console.log("scopeLikes1");
     				//console.log($scope.Likes);
@@ -28,7 +29,7 @@ angular.module('housrApp')
     		});
 
     	//console.log("scopeLikes2");
-    	//console.log($scope.Roomates);
+    	//console.log($scope.Roommates);
     });
 
 

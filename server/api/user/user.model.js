@@ -30,6 +30,8 @@ var UserSchema = new Schema({
 
   // Details
   age: Number,
+  dependents: Number,
+  gender: String,
   description: String,
   picture: String,
 });

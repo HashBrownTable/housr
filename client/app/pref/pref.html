@@ -1,61 +1,90 @@
 
 <md-content>
-Please indicate your preferences for your ideal roommate!
+  <h3>Tell us a little bit about who you're looking for...</h3>
+
+  <h4>Roommate Preferences</h4>
+  <div layout="row" layout-sm="column">
+    <md-checkbox ng-model="user.prefFemale" aria-label="Female" class="md-warn">
+       Female Roommates
+    </md-checkbox>
+
+     <md-checkbox ng-model="user.prefMale" aria-label="Male" class="md-warn">
+       Male Roommates
+    </md-checkbox>
+  </div>
+  <div layout>
+    <md-input-container flex>
+      <label>Age Prefered-Low</label>
+      <input ng-model="user.ageRange[0]" placeholder="ex. 19">
+    </md-input-container>
+    <md-input-container flex>
+      <label>Age Prefered-High</label>
+      <input ng-model="user.ageRange[1]" placeholder="ex. 30">
+    </md-input-container>
+  </div>
+  <div layout layout-sm="column">
+    <md-input-container flex>
+      <label>Number of roommates looking for</label>
+      <input ng-model="user.preferedNumber" placeholder="ex. 1">
+    </md-input-container>
+  </div>
+
+  <h4>Rental Preferences</h4>
+  <div layout>
+      <md-input-container flex>
+        <label>Min Price</label>
+        <input ng-model="user.priceRange[0]" placeholder="ex. 0">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Max Price</label>
+        <input ng-model="user.priceRange[1]" placeholder="ex. 5000">
+      </md-input-container>
+  </div>
+  <div layout layout-sm="column">
+    <md-input-container flex>
+      <label>Location (City, State, Zip)</label>
+      <input ng-model="user.preferedLocation">
+    </md-input-container>
+  </div>
 
 
-		<div layout="row" layout-sm="column">
-		 		 <md-checkbox ng-model="user.prefFemale" aria-label="Female" class="md-warn">
-		    		Female
-		 		 </md-checkbox>
+  <h3>Tell us a bit about yourself...</h3>
+  <div  layout layout-sm="column">
+    <md-input-container flex>
+      <label>Name</label>
+      <input ng-model="user.name" placeholder="John">
+    </md-input-container>
+  </div>
+  <div  layout layout-sm="column">
+    <md-input-container flex>
+      <label>Age</label>
+      <input ng-model="user.age" placeholder="ex. 30">
+    </md-input-container>
+  </div>
 
-		 		  <md-checkbox ng-model="user.prefMale" aria-label="Male" class="md-warn">
-		    		Male
-		 		 </md-checkbox>
+  <div  layout layout-sm="column">
+    <md-radio-group ng-model="user.gender" layout="row" layout-sm="column">
+      <md-radio-button value="Female" aria-label="Label 1">Female</md-radio-button>
+      <md-radio-button value="Male">Male</md-radio-button>
+    </md-radio-group>
+  </div>
+  <div  layout layout-sm="column">
+    <md-input-container flex>
+      <label>Dependents or Children</label>
+      <input ng-model="user.dependents" placeholder="ex. 2">
+    </md-input-container>
+  </div>
 
-		</div>
+  <md-input-container>
+    <label>About Yourself</label>
+    <textarea ng-model="user.description" columns="1" md-maxlength="500"></textarea>
+  </md-input-container>
 
-      <div  layout layout-sm="column">
-        <md-input-container>
-          <label>Name</label>
-          <input ng-model="user.name" placeholder="John">
-        </md-input-container>
+  <div>Select a photo of yourself: <input type="file" id="fileInput" /></div>
+  <img src="{{user.picture}}"/>
+  <section layout="row" layout-sm="column" layout-align="center center">
+    <span><md-button ng-click="save()">save</md-button></span>
+    <!-- <span><md-button ng-click="check()">check</md-button></span> -->
 
-      </div>
-
-     	<div layout layout-sm="column">
-	        <md-input-container>
-	          <label>Min Price</label>
-	          <input ng-model="user.priceRange[0]" placeholder="ex. 0">
-	        </md-input-container>
-	        <md-input-container>
-	          <label>Max Price</label>
-	          <input ng-model="user.priceRange[1]" placeholder="ex. 5000">
-	        </md-input-container>
-	        <md-input-container>
-	          <label>Roomates looking for</label>
-	          <input ng-model="user.preferedNumber" placeholder="ex. 1">
-	        </md-input-container>
-	        <md-input-container>
-	          <label>Age Prefered-Low</label>
-	          <input ng-model="user.ageRange[0]" placeholder="ex. 19">
-	        </md-input-container>
-	        <md-input-container>
-	          <label>Age Prefered-High</label>
-	          <input ng-model="user.ageRange[1]" placeholder="ex. 30">
-	        </md-input-container>
-	      </div>
-
-			<md-input-container>
-	        <label>Neighbourhood, City, State</label>
-	        <input ng-model="user.preferedLocation">
-	      </md-input-container>
-	      <md-input-container>
-	        <label>About your self</label>
-	        <textarea ng-model="user.description" columns="1" md-maxlength="150"></textarea>
-	      </md-input-container>
-    <section layout="row" layout-sm="column" layout-align="center center">
-      <span><md-button ng-click="save()">save</md-button></span>
-      <!-- <span><md-button ng-click="check()">check</md-button></span> -->
-
-    </section>
+  </section>
 </md-content>

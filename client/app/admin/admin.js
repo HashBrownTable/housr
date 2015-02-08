@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('housrApp')
-  .config(function ($stateProvider) {
+  .config(function($stateProvider) {
     $stateProvider
       .state('admin', {
         url: '/admin',
