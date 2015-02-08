@@ -20,8 +20,10 @@ angular.module('housrApp')
     			User.get({id: Likes.targetId},function(x) {
     				$scope.Likes[i].userData = x;
     				$scope.Likes[i].name = x.name;
-    				$scope.Roommates.push(x.name);
-            $scope.Roommates = _.uniq($scope.Roommates);
+    				$scope.Roommates.push(x);
+                    $scope.Roommates = _.uniq($scope.Roommates, function(n){
+                        return n.name;
+                    });
     				//console.log(x.name);
     				//console.log("scopeLikes1");
     				//console.log($scope.Likes);

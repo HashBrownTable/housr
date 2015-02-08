@@ -1,35 +1,38 @@
 
 <md-content>
 <div layout="row" layout-align="center">
-
+  <div flex="55">
 	<md-card>
-		<img src="{{user.picture || 'http://lorempixel.com/640/300/people/'+user.name}}">
-      <md-card-content>
-      <h1>{{user.name}}</h1>
-      <small>Last seen {{moment(user.lastOnline).fromNow()}}.</small>
-		<h3>About</h3>
+		<div style="background: url('{{user.picture || 'http://lorempixel.com/640/300/people/'+user.name}}'); width: 100%; padding-top: 50%; background-size: cover;"></div>
+    <md-card-content>
+    <h1>{{user.name}}</h1>
+    <small class="pull-right">Last seen {{moment(user.lastOnline).fromNow()}}.</small>
+		<h4 ng-if="user.description">About</h4>
 		<p>{{user.description}}</p>
 
-		<h3>Roommate Preferences</h3>
+		<h4>Roommate Preferences</h4>
     <p>
       {{user.gender}}<span ng-show="user.preferedGender"> looking for {{user.preferedGender}} roommates</span>.
       {{user.age}} years old<span ng-show="user.ageRange[0] || user.ageRange[1]"> looking for {{user.ageRange[0]}} - {{user.ageRange[1]}}</span>.</p>
     </p>
 
 
-		<h3 >Rental Details</h3>
+		<h4 >Rental Details</h4>
     <p>Looking to rent<span ng-show="user.priceRange[0] && user.priceRange[1]"> for ${{user.priceRange[0]}} - {{user.priceRange[1]}}</span><span ng-show="user.preferedLocation"> in <a ng-href="https://www.google.com/maps?q={{user.preferedLocation}}">{{user.preferedLocation}}</a></span>.</p>
 
 
-		<h3>Potential Roommates</h3>
-		<ul ng-repeat="x in Roommates">
-			<p>{{x}}<p>
+		<h4>Potential Roommates</h4>
+		<ul class="no-space no-style">
+      <li class="roommate-list" ng-repeat="x in Roommates">
+        <div class="avatar pull-left" style="background-image: url('{{x.picture || '/assets/images/profile-placeholder-dk.png'}}')"></div>
+  			<p>{{x.name}}<p>
+      </li>
 		</ul>
 
 	  </md-card-content>
 
 	</md-card>
-
+  </div>
 
 </div>
 </md-content>

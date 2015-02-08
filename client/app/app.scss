@@ -71,20 +71,22 @@ body {
   }
 }
 
+.avatar{
+  width: 2em;
+  height: 2em;
+  float: right;
+  display: inline-block;
+  background-size: cover;
+  border-radius: 50%;
+  &.pull-left{
+    float: left;
+  }
+}
+
 .header-profile{
   position: absolute;
   right: 1em;
   top: 0.5em;
-
-  .avatar{
-    width: 2em;
-    height: 2em;
-    float: right;
-    display: inline-block;
-    background-size: cover;
-    border-radius: 50%;
-  }
-
   .name{
     display: inline-block;
     font-size: 0.8em;
@@ -193,6 +195,15 @@ md-toolbar {
 
 }
 
+ul{
+  &.no-space{
+    padding: 0;
+    margin: 0;
+  }
+  &.no-style{
+    list-style-type: none;
+  }
+}
 // Component styles are injected through grunt
 // injector
 @import 'Chats/chats.scss';

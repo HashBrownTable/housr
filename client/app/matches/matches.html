@@ -6,8 +6,8 @@
   <md-card class="matches-nav" ng-if="matches.length > 0">
     <ul>
       <li class="{{matchesNav==='matches' ? 'active' : '' }}"><a href="/matches">Your <span class="num">{{matches.length}}</span> Matches</a></li>
-      <li class="{{matchesNav==='matches' ? 'like' : '' }}"><a href="/like">Your <span class="num">{{numLikes}}</span> Likes</a></li>
-      <li class="{{matchesNav==='matches' ? 'dislike' : '' }}"><a href="/dislike">Your <span class="num">{{numDislikes}}</span> Dislike{{numDislikes>1 ? 's' : ''}}</a></li>
+      <li class="{{matchesNav==='like' ? 'active' : '' }}"><a href="/like">Your <span class="num">{{numLikes}}</span> Likes</a></li>
+      <li class="{{matchesNav==='dislike' ? 'active' : '' }}"><a href="/dislike">Your <span class="num">{{numDislikes}}</span> Dislike{{numDislikes>1 ? 's' : ''}}</a></li>
     </ul>
   </md-card>
   <md-list>

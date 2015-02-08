@@ -4,7 +4,7 @@
     <md-item-content>
       <div class="md-tile-left">
         <a ng-href="/details/{{item.id}}">
-          <img ng-src="{{userDetails[item.id].picture || 'http://lorempixel.com/50/50/people/'+userDetails[item.id].name}}" class="face" alt="{{userDetails[item.id].name}}">
+          <div class="avatar face pull-left" style="background-image: url('{{userDetails[item.id].picture || 'http://lorempixel.com/50/50/people/'+userDetails[item.id].name}}')" alt="{{userDetails[item.id].name}}"></div>
         </a>
       </div>
       <div class="md-tile-content">
