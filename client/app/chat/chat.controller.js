@@ -13,6 +13,12 @@ angular.module('housrApp')
           });
         });
         $scope.moment = moment;
+        setInterval(function() {
+          Chats.get({id: chatId}, function(chat) {
+            $scope.messages = chat.messages;
+            $scope.scrollBottom();
+          });
+        }, 500);
         $scope.messages = chat.messages;
         $scope.scrollBottom = function() {
           _.defer(function() {
