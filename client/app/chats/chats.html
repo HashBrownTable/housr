@@ -1,3 +1,6 @@
+<div layout="row" layout-align="center center" flex ng-if="chats.length === 0">
+  <h3>No recent conversations. :(</h3>
+</div>
 <md-list>
     <md-item ng-repeat="item in chats">
       <md-item-content>

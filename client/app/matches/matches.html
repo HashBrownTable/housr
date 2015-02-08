@@ -1,3 +1,6 @@
+<div layout="row" layout-align="center center" flex ng-if="matches.length === 0">
+  <h3>No more matches found!</h3>
+</div>
 <md-list>
     <md-item ng-repeat="item in matches">
         <md-content>
@@ -18,7 +21,7 @@
                         </p> -->
                         <!-- </br> -->
                         <md-button ng-href="/details/{{item._id}}" aria-label="View">
-                            read bio 
+                            read bio
                         </br></br>
                         </md-button>
 
