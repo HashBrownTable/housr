@@ -1,5 +1,8 @@
+<div layout="row" layout-align="center center" flex ng-if="likePeople.length === 0">
+  <h3>No more matches found!</h3>
+</div>
 <md-list>
-    <md-item ng-repeat="like in likes">
+    <md-item ng-repeat="like in likePeople">
         <md-content>
             <div layout="row" layout-align="center">
                 <md-card>

@@ -1,5 +1,6 @@
 'use strict';
 angular.module('housrApp')
+
   .controller('DislikeCtrl', function($scope, LikeDislike, User) {
     $scope.message = 'Hello';
 
