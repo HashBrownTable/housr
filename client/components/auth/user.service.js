@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('housrApp')
-  .factory('User', function ($resource) {
-    return $resource('/api/users/:id/:controller', {
+  .factory('User', function ($resource, $rootScope) {
+    return $resource($rootScope.domain + '/api/users/:id/:controller', {
       id: '@_id'
     },
     {

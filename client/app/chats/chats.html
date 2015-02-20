@@ -11,7 +11,7 @@
           <h3>{{item.names}}</h3>
           <p>{{item.messages[item.messages.length-1].text}}</p>
         </div>
-        <md-button class="pull-right btn" ng-href="/chat/{{item._id}}">View Chat</md-button>
+        <md-button class="pull-right btn" ng-href="#/chat/{{item._id}}">View Chat</md-button>
       </md-item-content>
       <md-divider ng-if="!$last"></md-divider>
     </md-item>

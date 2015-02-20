@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('housrApp')
-  .factory('LikeDislike', function($resource) {
-    return $resource('/api/likedislikes/:id/:controller', {
+  .factory('LikeDislike', function($resource, $rootScope) {
+    return $resource($rootScope.domain + '/api/likedislikes/:id/:controller', {
       id: '@_id'
     },
     {

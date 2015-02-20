@@ -15,7 +15,8 @@ angular.module('housrApp', [
     $urlRouterProvider
       .otherwise('/');
 
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true).
+    //  hashPrefix('!');
     $httpProvider.interceptors.push('authInterceptor');
     $mdThemingProvider.theme('default')
       .primaryPalette('blue')
@@ -23,6 +24,12 @@ angular.module('housrApp', [
 
   })
   .factory('authInterceptor', function($rootScope, $q, $cookieStore, $location) {
+    // Use housr.fn.lc if static file
+    $rootScope.domain = '';
+    if (window.location.protocol === 'file:') {
+      $rootScope.domain = 'http://housr.fn.lc';
+    }
+
     return {
       // Add authorization token to headers
       request: function(config) {
@@ -49,6 +56,7 @@ angular.module('housrApp', [
   })
 
   .run(function($rootScope, $location, Auth) {
+
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$stateChangeStart', function(event, next) {
       Auth.isLoggedInAsync(function(loggedIn) {
@@ -86,7 +94,7 @@ angular.module('housrApp', [
 
 angular.module('housrApp').controller('NavCtrl', function($scope, $rootScope, $mdSidenav, User, $location, socket, $mdToast) {
     var updateMe = function(url){
-      if (url !== '/signup' && $location.path() != '/signup') {
+      if (url !== '#/signup' && $location.hash() !== '/signup') {
         User.get(function(data) {
           console.log(data);
           $scope.me = data;
@@ -106,7 +114,7 @@ angular.module('housrApp').controller('NavCtrl', function($scope, $rootScope, $m
       notificationCount: 0
     };
     socket.socket.on('notification', function(notification) {
-      if (_.include(notification.targets, $scope.me._id) && !$location.path().match('/chat/'+notification.id) ) {
+      if (_.include(notification.targets, $scope.me._id) && !$location.hash().match('/chat/'+notification.id) ) {
         $scope.data.notificationCount += 1;
         $mdToast.show($mdToast.simple().content(notification.msg));
       }

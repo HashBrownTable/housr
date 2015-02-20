@@ -6,8 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <base href="/">
-    <title></title>
+    <title>Housr</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic">
@@ -31,13 +30,13 @@
 
     <md-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" md-component-id="left" ng-if="showNav" md-is-locked-open="$media('gt-md')">
       <md-toolbar ng-controller="SidenavCtrl" >
-        <a ng-href="/" ng-click="close()" class="logo"><img src="/assets/images/logo.png"></a>
+        <a ng-href="#/" ng-click="close()" class="logo"><img src="assets/images/logo.png"></a>
 <!--         <md-button id="close-sidenav" ng-click="close()">close</md-button> -->
       </md-toolbar>
       <md-list flex>
         <md-item>
           <md-item-content>
-            <md-button ng-href="/details/me">
+            <md-button ng-href="#/details/me">
               View Profile
             </md-button>
           </md-item-content>
@@ -58,7 +57,7 @@
         </md-item> -->
         <md-item>
           <md-item-content>
-            <md-button ng-href="/pref">
+            <md-button ng-href="#/pref">
               Preferences
             </md-button>
           </md-item-content>
@@ -67,7 +66,7 @@
       <md-list>
         <md-item>
           <md-item-content>
-            <md-button ng-href="/logout">
+            <md-button ng-href="#/logout">
               Logout
             </md-button>
           </md-item-content>
@@ -89,7 +88,7 @@
           </md-tabs>
 
         <div class="header-profile">
-          <a class="name" href="/pref" hide-sm>{{me.name}}</a>
+          <a class="name" href="#/pref" hide-sm>{{me.name}}</a>
           <div class="avatar" style="background-image: url('{{me.picture || '/assets/images/profile-placeholder.png'}}');" class="face"></div>
         </div>
 

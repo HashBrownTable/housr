@@ -20,7 +20,7 @@ angular.module('housrApp')
         var cb = callback || angular.noop;
         var deferred = $q.defer();
 
-        $http.post('/auth/local', {
+        $http.post($rootScope.domain + '/auth/local', {
           email: user.email,
           password: user.password
         }).
