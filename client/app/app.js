@@ -85,19 +85,21 @@ angular.module('housrApp', [
   });
 
 angular.module('housrApp').controller('NavCtrl', function($scope, $rootScope, $mdSidenav, User, $location, socket, $mdToast) {
-    var updateMe = function(){
-      User.get(function(data) {
-        console.log(data);
-        $scope.me = data;
-        $scope.toggleLeft = function() {
-          console.log('sidenav toggle');
-          $mdSidenav('left').toggle();
-        };
-      });
+    var updateMe = function(url){
+      if (url !== '/signup' && $location.path() != '/signup') {
+        User.get(function(data) {
+          console.log(data);
+          $scope.me = data;
+          $scope.toggleLeft = function() {
+            console.log('sidenav toggle');
+            $mdSidenav('left').toggle();
+          };
+        });
+      }
     };
     updateMe();
     $rootScope.$on('$stateChangeStart', function(event, next, prev) {
-      updateMe();
+      updateMe(next.url);
     });
     $scope.data = {
       navIndex: 3,
