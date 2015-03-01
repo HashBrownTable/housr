@@ -3,6 +3,9 @@ public
 .tmp
 .sass-cache
 .idea
+*.jar
+*.class
+*.apk
 client/bower_components
 dist
 /server/config/local.env.js

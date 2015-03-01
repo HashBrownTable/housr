@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://146.148.76.183/housr-dev'
+    uri: 'mongodb://localhost/housr-dev'
   },
 
   seedDB: true
